@@ -18,12 +18,12 @@
   			float: center;
   			width: 80%;
 		}
-		button,input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 7px 40px;text-align: center; border-radius: 10px}
-		#file{text-align: right;}
+		button,input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; margin: 0% 40%}
+		input[type=submit]:hover{background-color: green;}
 	</style>
 </head>
 <body>
-<form>
+<form action="./login/Registration.php" method="post" enctype="multipart/form-data">
 	<table align="center" class="main">
 		<tr>
 			<th colspan="2"><h1> Registration Form</h1></th>
@@ -100,82 +100,7 @@
 		<tr>
 			<td colspan="2">
 				<table class="subtable">
-					<tr>
-						<th>Subject</th>
-						<th>Result</th>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub1" placeholder="Subject 1">
-						</td>
-						<td>
-							<input type="text" name="olresult1">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub2" placeholder="Subject 2">
-						</td>
-						<td>
-							<input type="text" name="olresult2">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub3" placeholder="Subject 3">
-						</td>
-						<td>
-							<input type="text" name="olresult3">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub4" placeholder="Subject 4">
-						</td>
-						<td>
-							<input type="text" name="olresult4">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub5" placeholder="Subject 5">
-						</td>
-						<td>
-							<input type="text" name="olresult5">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub6" placeholder="Subject 6">
-						</td>
-						<td>
-							<input type="text" name="olresult6">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub7" placeholder="Subject 7">
-						</td>
-						<td>
-							<input type="text" name="olresult7">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub8" placeholder="Subject 8">
-						</td>
-						<td>
-							<input type="text" name="olresult8">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="olsub9" placeholder="Subject 9">
-						</td>
-						<td>
-							<input type="text" name="olresult9">
-						</td>
-					</tr>
+					
 					<tr>
 						<td>
 							Upload the verified softcopy of the result sheet
@@ -195,34 +120,7 @@
 		<tr>
 			<td colspan="2">
 				<table class="subtable">
-					<tr>
-						<th>Subject</th>
-						<th>Result</th>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="alsub1" placeholder="Subject 1">
-						</td>
-						<td>
-							<input type="text" name="alresult1">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="alsub2" placeholder="Subject 2">
-						</td>
-						<td>
-							<input type="text" name="alresult2">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="alsub3" placeholder="Subject 3">
-						</td>
-						<td>
-							<input type="text" name="alresult3">
-						</td>
-					</tr>
+					
 					<tr>
 						<td>
 							Upload the verified softcopy of the result sheet
@@ -243,7 +141,7 @@
 				Name			
 			</td>
 			<td>
-				<input type="text" name="">
+				<input type="text" name="Emerg_contact1">
 			</td>
 		</tr>
 		<tr>
@@ -251,7 +149,7 @@
 				Relationship to you			
 			</td>
 			<td>
-				<input type="text" name="">
+				<input type="text" name="Relationship1">
 			</td>
 		</tr>
 		<tr>
@@ -259,7 +157,7 @@
 				Mobile No			
 			</td>
 			<td>
-				<input type="text" name="">
+				<input type="text" name="contact_no1">
 			</td>
 		</tr>
 
@@ -271,7 +169,7 @@
 				Name			
 			</td>
 			<td>
-				<input type="text" name="">
+				<input type="text" name="Emerg_contact2">
 			</td>
 		</tr>
 		<tr>
@@ -279,7 +177,7 @@
 				Relationship to you			
 			</td>
 			<td>
-				<input type="text" name="">
+				<input type="text" name="Relationship2">
 			</td>
 		</tr>
 		<tr>
@@ -287,15 +185,13 @@
 				Mobile No			
 			</td>
 			<td>
-				<input type="text" name="">
+				<input type="text" name="contact_no2">
 			</td>
 		</tr>
 
 		<tr>
-			<td colspan="2" align="center"><input type="submit" name="regform" value="submit"></td>
+			<td colspan="2" align="center"><input type="submit" name="regform" value="Submit"></td>
 		</tr>
-
-
 	</table>
 </form>
 </body>

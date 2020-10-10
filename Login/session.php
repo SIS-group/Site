@@ -1,5 +1,5 @@
 <?php
-   //include("dbcon.php");
+   include("dbcon.php");
    session_start();
    
    $user = $_SESSION['login_user'];

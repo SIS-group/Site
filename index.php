@@ -23,7 +23,7 @@ session_start();
     		border-color: #4c4;
 		}
 		button:hover{background-color: green;}
-		input[type="submit"]:hover{background-color: green;}
+		input[type="submit"]:hover{background-color: green; color: white;}
 	</style>
 
 </head>
@@ -81,10 +81,10 @@ session_start();
 			
 	</form>
 	<tr>
-		<td colspan="2"><a href="http://localhost/SIS/Student_Reg_form.php" target="_self"><button>Register</button></a><br></td>
+		<td colspan="2"><a href="./Student_Reg_form.php" target="_self"><button>Register</button></a><br></td>
 	</tr>
 	<tr>
-		<td><a href="http://localhost/SIS/Login/forgot_pass.html"><i>forgot password ?</i></a></td>
+		<td><a href="./Login/forgot_pass.php"><i>forgot password ?</i></a></td>
 	</tr>
 	</table>
 </body>
