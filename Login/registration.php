@@ -62,6 +62,13 @@
 
 		$sql5 = "INSERT INTO(NIC_No,Contact_Name,Relationship,ContactNo) VALUES('$NIC','$Name2','$Relation2','$contact2')";
 		mysqli_query($conn,$sql5);
+
+		//mobile number
+		$Mobile = $_POST['Mobile'];
+		$sql6 = "INSERT INTO(NIC_No,ContactNo) VALUES('$NIC','Mobile')";
+		mysqli_query($conn,$sql6);
+
+		header("./login.php");
 	}
 	mysqli_close($conn);
 ?>

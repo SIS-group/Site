@@ -2,17 +2,17 @@
 	include ('../../login/session.php');
 	include ('../../login/dbcon.php');
 
-	if (isset($_POST['medsubmit']) && !empty($_POST['Med_date']) && !empty($_POST['medfile'])) {
+	if (isset($_POST['medsubmit'])) {
 
 		$active_user = $user;
 		$date = $_POST['Med_date'];
-		$filename=$_FILES['medfile']['name'];
-		$filetmpname=$_FILES['medfile']['tmp_name'];
-		$folder='./Medical_files/';
+		$file_name=$_FILES['medfile']['name'];
+		$file_tmp_loc=$_FILES['medfile']['tmp_name'];
+		$file_store="./Medical_files/".$file_name;
 
-		move_uploaded_file($filetmpname, $folder.$filename);
+		move_uploaded_file($file_tmp_loc , $file_store);
 
-		$sql = "INSERT INTO student_medical(RegNo,MedDate,MedicalFile) VALUES('$active_user','$date','$filename')";
+		$sql = "INSERT INTO student_medical(RegNo,MedDate,MedicalFile) VALUES('$active_user','$date','$file_name')";
 		mysqli_query($conn,$sql);
 	}
 	mysqli_close($conn);
@@ -31,6 +31,7 @@
 
 	</style>
 </head>
+
 <body>
 	<div class="sidebar">
   		<a class="active" href="./Medical.php">Medical Submission</a>

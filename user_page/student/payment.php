@@ -2,7 +2,7 @@
 	include ('../../login/session.php');
 	include ('../../login/dbcon.php');
 
-	if (isset($_POST['paysubmit']) && !empty($_POST['payment_date']) && !empty($_POST['bank_branch']) && !empty($_POST['payfile'])) {
+	if (isset($_POST['paysubmit'])) {
 
 		$active_user = $user;
 		$date = $_POST['payment_date'];
