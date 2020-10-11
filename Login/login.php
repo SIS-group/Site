@@ -29,14 +29,37 @@
 	}
 
 	elseif($type == 'Staff') {
-		$sql = "SELECT Staff_ID FROM staff WHERE Staff_ID= '$username' and Password= '$password' ";
+		$sql = "SELECT Staff_ID,Role FROM staff WHERE Staff_ID= '$username' and Password= '$password' ";
 		$result=mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$role = $row["Role"];
 		$count = mysqli_num_rows($result);
 
 		if($count == 1) {
          	$_SESSION["username"] = $username;
-        	header("location: ../user_page/admin.html");
+
+         	if($role == "Director"){
+         		header(" "); //Director page url
+         	}
+         	elseif ($role =="program coordinator") {
+         		header(" "); 
+         	}
+         	elseif ($role=="Examiner") {
+         		header(" ");
+         	}
+         	elseif ($role=="Assistant bursar") {
+         		header("../user_page/Assistant_bursar");
+         	}
+         	elseif ($role=="Deputy Director Examination") {
+         		header(" ");
+         	}
+         	elseif ($role=="Interview committee member") {
+         		header(" ");
+         	}
+         	elseif ($role="Staff Assistant") {
+         		header(" ");
+         	}
+        	//header("location: ../user_page/admin.php");
     	}
     	else {
         	$_SESSION["error"] = $error;
