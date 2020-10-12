@@ -44,7 +44,7 @@
          		
          	}
          	elseif ($role =="program coordinator") {
-         		header("location: ");
+         		header("location:../user_page/procordinator.php ");
          		
          	}
          	elseif ($role=="Examiner") {
