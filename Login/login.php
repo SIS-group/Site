@@ -33,33 +33,45 @@
 		$result=mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		$role = $row["Role"];
+		
 		$count = mysqli_num_rows($result);
 
 		if($count == 1) {
          	$_SESSION["username"] = $username;
 
          	if($role == "Director"){
-         		header(" "); //Director page url
+         		header("location: "); //Director page url
+         		
          	}
          	elseif ($role =="program coordinator") {
-         		header(" "); 
+         		header("location: ");
+         		
          	}
          	elseif ($role=="Examiner") {
-         		header(" ");
+         		header("location: ");
+         		
          	}
          	elseif ($role=="Assistant bursar") {
-         		header("../user_page/Assistant_bursar");
+         		header("location:../user_page/Assistant_bursar.php");
+         		
          	}
          	elseif ($role=="Deputy Director Examination") {
-         		header(" ");
+         		header("location: ");
+         		
          	}
          	elseif ($role=="Interview committee member") {
-         		header(" ");
+         		header("location: ");
+         		
          	}
-         	elseif ($role="Staff Assistant") {
-         		header(" ");
+         	elseif ($role=="Staff Assistant") {
+         		header("location: ");
+         		
          	}
-        	//header("location: ../user_page/admin.php");
+         	elseif ($role=="Assistant registrar") {
+         		header("location: ");
+         		
+         	}
+        	
     	}
     	else {
         	$_SESSION["error"] = $error;
