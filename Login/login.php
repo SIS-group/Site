@@ -67,7 +67,7 @@
          		header("location:../user_page/ ");
          		
          	}
-         	elseif ($role=="Assistant registrar") {
+         	elseif ($role=="Assistant Registrar") {
          		header("location:../user_page/assistant_registrar.php");
          		
          	}

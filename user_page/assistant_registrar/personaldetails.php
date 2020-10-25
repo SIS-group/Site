@@ -22,6 +22,10 @@
                 <!DOCTYPE html>
                 <html>
                     <head>
+                        <title>Student's Details</title>
+                        <link rel="stylesheet" type="text/css" href="../../css/css.css">
+                        <link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
+                        
                         <style>
                             .container1{
                                 border-radius: 5px;
@@ -55,43 +59,54 @@
                         </style>
                     </head>
                     <body style="background-color:lavender;">
-                        <div class="container1">
-                            <p style="color:cornsilk; font-size:160%;">Personal Details of <?php echo $text?></p>
+
+                        <div class="sidebar">
+                            <a href=" studentpaymentdetails.php">Student Payment Details</a>
+                            <a href=" studentpersonaldetails.php ">Student's Personal Details</a>
+                            <a href=" studentresultsandgrades.php">Student Results and Grades</a>
+                            <a href=" ">Account settings</a>
+                            <a href="../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
                         </div>
-                        <table>
-                            <tr>
-                                <td>Name</td>
-                                <td><?php echo $row["Name"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>   
-                                <td><?php echo $row["Address"]?></td>
-                            </tr>
-                            <tr>
-                                <td>District</td>  
-                                <td><?php echo $row["District"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Province</td>  
-                                <td><?php echo $row["Province"]?></td>
-                            </tr>
-                            <tr>
-                                <td>email</td>  
-                                <td><?php echo $row["Email"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Date of Birth</td>  
-                                <td><?php echo $row["DOB"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>  
-                                <td><?php echo $row["Gender"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Marital_status</td>  
-                                <td><?php echo $row["Marital_status"]?></td>
-                            </tr>
-                        </table>
+                        
+                        <div class="content">
+                            <div class="container1">
+                                <p style="color:cornsilk; font-size:160%;">Personal Details of <?php echo $text?></p>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td>Name</td>
+                                    <td><?php echo $row["Name"]?></td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>   
+                                    <td><?php echo $row["Address"]?></td>
+                                </tr>
+                                <tr>
+                                    <td>District</td>  
+                                    <td><?php echo $row["District"]?></td>
+                                </tr>
+                                <tr>
+                                    <td>Province</td>  
+                                    <td><?php echo $row["Province"]?></td>
+                                </tr>
+                                <tr>
+                                    <td>email</td>  
+                                    <td><?php echo $row["Email"]?></td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth</td>  
+                                    <td><?php echo $row["DOB"]?></td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>  
+                                    <td><?php echo $row["Gender"]?></td>
+                                </tr>
+                                <tr>
+                                    <td>Marital_status</td>  
+                                    <td><?php echo $row["Marital_status"]?></td>
+                                </tr>
+                            </table>
+                        </div>
                     </body>
                 </html>
             <?php

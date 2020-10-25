@@ -7,7 +7,6 @@
         <title>Student Personal Details</title>
         <link rel="stylesheet" type="text/css" href="../../css/css.css">
 	    <link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
-        <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
         <style type="text/css">
 		table{border-style: solid; border-radius: 30px ;background-color: white; padding: 7% 7%;}
 		td{padding: 5px 5px}
@@ -23,9 +22,6 @@
     </head>
 
     <body>
-        <!--<div class="Button3">
-            <button class="button" onclick="document.location='index.php'">Logout</button>
-        </div>  -->
         <div class="sidebar">
   		<a href=" studentpaymentdetails.php">Student Payment Details</a>
   		<a href=" studentpersonaldetails.php ">Student's Personal Details</a>
@@ -33,7 +29,7 @@
   		<a href=" ">Account settings</a>
   		<a href="../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
 	    </div>
-        
+
         <p style="color:cornsilk; font-size:160%;">Personal Details of Students</p>
 
         <div class="content" align="center">
