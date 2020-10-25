@@ -6,9 +6,12 @@ session_start();
 <head>
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="./css/css.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{border-style: solid; border-radius:30px; padding: 3% 3%; background-color: white;vertical-align: center;width: 30% ; margin-top: 4%}
-		td{text-align: center; padding: 3px}
+		table{border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;width: 30% ; margin-top:1%;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		td{text-align: center; padding: 2px}
 
 		input[type="radio"] {opacity: 0;width: 0 ;position: fixed; }
 		label{background-color: #ddd;border: 1px solid #444;border-radius: 10px; width: 50%; padding: 10px 15px;display: inline-block;
@@ -22,17 +25,28 @@ session_start();
     		background-color: #bfb;
     		border-color: #4c4;
 		}
-		button:hover{background-color: green;}
-		input[type="submit"]:hover{background-color: green; color: white;}
+		
+		input[type="submit"]{width: 50%}
+		button:hover,input[type="submit"]:hover{
+			background-color: green; color: white;width: 50% ;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+		}
+		body{font-family: 'Raleway', sans-serif;}
+		
 	</style>
 
 </head>
 <body>
 	<table align="center" width="20%" >
 	<form action="./login/login.php" method="post">
-		
 			<tr>
-				<td colspan="2" style="color: #002b80"><h1>LOGIN</h1></td>
+			<td colspan="2" >
+				<img src="./icons/logo.png" style="width:80px;height:80px;" >
+			</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="color: #002b80" id='login'><h1>LOGIN</h1></td>
 			</tr>
 			<tr>
 				<td >
@@ -81,7 +95,7 @@ session_start();
 			
 	</form>
 	<tr>
-		<td colspan="2"><a href="./Student_Reg_form.php" target="_self"><button>Register</button></a><br></td>
+		<td colspan="2"><a href="./Student_Reg_form.php" target="_self"><button style="width: 50%">Register</button></a><br></td>
 	</tr>
 	<tr>
 		<td><a href="./Login/forgot_pass.php"><i>forgot password ?</i></a></td>

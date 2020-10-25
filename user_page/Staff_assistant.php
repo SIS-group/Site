@@ -4,7 +4,6 @@
 	<title>Welcome</title>
 	<link rel="stylesheet" type="text/css" href="../css/css.css">
 	<link rel="stylesheet" type="text/css" href="../css/sidepanel.css">
-	<link rel="stylesheet" type="text/css" href="../css/image_view.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
 		table{background-color: white; padding: 10px 10px; border-radius: 10px ; margin-top: 10%}
@@ -14,23 +13,9 @@
 		#reject:hover{background-color: red}
 		input[type=submit]{margin-left: 30px}
 		#logout:hover{background-color: red}
+		img{margin-bottom: 20px}
 		body{font-family: 'Raleway', sans-serif;}
-	</style>
-
-	<script type="text/javascript">
-		function showimage(x) {
-			var modal = document.getElementById("myModal");
-			var img = document.getElementById(x);
-			var modalImg = document.getElementById("img01");
- 			modal.style.display = "block";
-  			modalImg.src = img.src;
-			var span = document.getElementsByClassName("close")[0];
-
-			span.onclick = function() { 
-  				modal.style.display = "none";
-			}
-		}
-	</script> 
+	</style> 
 
 
 

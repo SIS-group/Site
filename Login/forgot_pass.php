@@ -1,13 +1,28 @@
 <?php
-	
+	if(isset($_POST['forgotpass'])){
+		$to = $_POST['email'];
+    	$subject = "This is your temporary password";
+         
+    	$message = "<b>This is HTML message.</b>";
+    	$retval = mail ($to,$subject,$message);
+         
+        if( $retval == true ) {
+            echo "Message sent successfully...";
+        }else {
+            echo "Message could not be sent...";
+        }
+
+	}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Recover password</title>
 	<link rel="stylesheet" type="text/css" href="../css/css.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
 		.forgotform{border: 1px solid black; padding: 10px 10px;border-radius: 10px; background-color: white; width: 30% ; margin-top: 10%}
+		body{font-family: 'Raleway', sans-serif;}
 	</style>
 </head>
 <body><center>

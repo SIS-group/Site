@@ -1,6 +1,6 @@
 <?php
 	
-	include ('../../login/dbcon.php');
+	include ('../../config/dbcon.php');
 	if(isset($_POST['create_account'])) {
 		$role = $_POST['role'];
 		$Staff_id = $_POST['Staff_id'];
@@ -19,8 +19,9 @@
 	<title>Create Staff User Account</title>
 	<link rel="stylesheet" type="text/css" href="../../css/css.css">
 	<link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{border-style: solid; border-radius: 30px ;background-color: white; padding: 7% 7%;}
+		table{ border-radius: 30px ;background-color: white; padding: 7% 7%;}
 		td{padding: 5px 5px}
 		input[type=submit]:hover{background-color: green}
 		.sidebar a {
@@ -30,6 +31,7 @@
   			text-decoration: none;
   			text-align: center;
 		}
+    body{font-family: 'Raleway', sans-serif;}
 	</style>
 </head>
 <body>
@@ -37,8 +39,8 @@
   		<a href="../Admin.php">Analyze System Performance</a>
   		<a class="active" href=" ./manage_accounts.php ">Manage User Accounts</a>
   		<a href=" ">Troubleshoot</a>
-  		<a href=" ">Account setting</a>
-  		<a href="../../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
+  		<a href="./account_setting.php">Account setting</a>
+  		<a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 25%">Log out</button></a>
 	</div>
 	
 	<div class="content" align="center">

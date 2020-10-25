@@ -1,5 +1,5 @@
 <?php 
-	include ('../../login/dbcon.php');
+	include ('../../config/dbcon.php');
 	if(isset($_POST['Remove_account'])) {
 		$type = $_POST['user_type'];
 		$username = $_POST['Username'];
@@ -21,8 +21,9 @@
 	<title>Remove Accounts</title>
 	<link rel="stylesheet" type="text/css" href="../../css/css.css">
 	<link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{border-style: solid; border-radius: 30px ;background-color: white; padding: 7% 7%; margin-top: 15%}
+		table{border-radius: 30px ;background-color: white; padding: 7% 7%; margin-top: 10%}
 		td{padding: 10px 5px; text-align: center;}
 		input[type=submit]:hover{background-color: red}
 		.sidebar a {
@@ -32,6 +33,7 @@
   			text-decoration: none;
   			text-align: center;
 		}
+		body{font-family: 'Raleway', sans-serif;}
 	</style>
 </head>
 <body>
@@ -39,11 +41,12 @@
   		<a href="../Admin.php">Analyze System Performance</a>
   		<a class="active" href=" ./manage_accounts.php ">Manage User Accounts</a>
   		<a href=" ">Troubleshoot</a>
-  		<a href=" ">Account setting</a>
-  		<a href="../../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
+  		<a href="./account_setting.php">Account setting</a>
+  		<a href="../../login/logout.php" style="all:unset ;"><button style="margin-top: 40%;margin-left: 25%">Log out</button></a>
 	</div>
 	
 	<div class="content" align="center">
+		<h1>Remove User Account</h1>
 		<form action=" " method="post">
 			<table align="center">
 				<tr>

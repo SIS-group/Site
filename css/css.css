@@ -1,5 +1,5 @@
-
-body{background-color: #99bbff ; margin: 0px}
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+body{background-color: #99bbff ; margin: 0px;font-family: 'Raleway', sans-serif;}
 input[type=text],input[type=password] {
   	border: 1px solid black;
   	border-radius: 10px;
@@ -7,6 +7,11 @@ input[type=text],input[type=password] {
 }
 button,input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 7px 40px;text-align: center;
  border-radius: 10px;display: inline-block;}
+
+input[type="submit"]:hover{background-color: green;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+
+table{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 
 
 
