@@ -7,7 +7,7 @@
         $text = mysqli_real_escape_string($conn,$_POST['searchtext']);
         $search = mysqli_real_escape_string($conn,$_POST['searchby']);
 
-        $sql1 = " SELECT Name,Address,District,Province,Email,DOB,Gender,Marital_status FROM student WHERE $search LIKE '%$text%' ";
+        $sql1 = " SELECT Name,Address,District,Province,Email,DOB,Gender,Marital_status FROM student WHERE $search='$text' ";
         $result = mysqli_query($conn,$sql1);
         
         if (!$result) {
@@ -25,7 +25,7 @@
                         <style>
                             .container1{
                                 border-radius: 5px;
-                                background-color:darkcyan;
+                                background-color:#002b80 ;
                                 padding: 20px;
                             } 
                             table 
