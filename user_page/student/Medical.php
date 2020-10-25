@@ -1,6 +1,7 @@
 <?php 
-	include ('../../login/session.php');
-	include ('../../login/dbcon.php');
+					
+	include ('../../config/dbcon.php');
+	include ('../../config/session.php');
 
 	if (isset($_POST['medsubmit'])) {
 
@@ -24,22 +25,27 @@
 	<title>Medical submission</title>
 	<link rel="stylesheet" type="text/css" href="../../css/css.css">
 	<link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{border-style: solid; padding: 40px 40px;border-radius: 10px; background-color: white;text-align: center; margin-top: 5%}
+		table{padding: 40px 40px;border-radius: 10px; background-color: white;text-align: center; margin-top: 5%;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
 		td{padding: 10px 10px}
 		input[type="date"]{border-radius: 10px; text-align: center;width: 90%}
-
+		body{font-family: 'Raleway', sans-serif;}
 	</style>
 </head>
 
 <body>
 	<div class="sidebar">
+		<center><img src="../../icons/logo.png" style="width:80px;height:80px;" ></center>
+		<a href="../student.php">Results & Grades</a>
   		<a class="active" href="./Medical.php">Medical Submission</a>
   		<a href="./course_reg.php">Course Registration</a>
-  		<a href="#contact">Notifications</a>
   		<a href="./payment.php">Payment Details</a>
-  		<a href="#about">Account details</a>
-  		<a href="http://localhost/SIS/" target="_self" style="all:unset ;padding: 25%;"><button >Log out</button></a>
+  		<a href="#contact">Notifications</a>
+  		<a href="Account_Setting.php">Account setting</a>
+  		<a href="http://localhost/SIS/" target="_self" style="all:unset ;"><button style="margin-top: 20%;margin-left: 25%">Log out</button></a>
 
 	</div>
 

@@ -2,14 +2,17 @@
 <html>
 <head>
 	<title>Registration</title>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		.main{border-style: solid; border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center}
+		.main{ border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;margin-top: 5%;margin-bottom: 5%;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
 		.subtable{border-style: groove; border-radius:10px; padding: 5px 5px;border-width: 1px}
 		td{text-align: left; padding: 7px}
 		th{text-align: center}
-		body{background-color: #99bbff}
+		body{background-color: #99bbff;font-family: 'Raleway', sans-serif;}
 		input[type=text]{
-  			border: 1px solid black;
+  			border: 1px solid grey;
   			border-radius: 10px;
   			padding: 7px 10px;
   			box-sizing: border-box;
@@ -18,13 +21,23 @@
   			float: center;
   			width: 80%;
 		}
-		button,input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; margin: 0% 40%}
-		input[type=submit]:hover{background-color: green;}
+		input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; margin: 0% 40% ;}
+
+		input[type=submit]:hover{
+			background-color: green;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
 	</style>
 </head>
 <body>
 <form action="./login/Registration.php" method="post" enctype="multipart/form-data">
 	<table align="center" class="main">
+		<tr>
+			<td colspan="2"><center>
+				<img src="./icons/logo.png" style="width:80px;height:80px;" >
+			</center></td>
+		</tr>
 		<tr>
 			<th colspan="2"><h1> Registration Form</h1></th>
 		</tr>
@@ -75,13 +88,12 @@
 			<td><input type="text" name="Email" placeholder="abc@mail.com"></td>
 		</tr>
 		<tr>
-			<td rowspan="2">Marital status</td>
-			<td><input type="radio" name="Marital" value="Single">Single</td>
+			<td>Marital status</td>
+			<td><input type="radio" name="Marital" value="Single">Single
+		
+			<input type="radio" name="Marital" value="Married">Married</td>
 		</tr>
 		<tr>
-			<td><input type="radio" name="Marital" value="Married">Married</td>
-		</tr>
-		<tr >
 			<td rowspan="2">Program applying for</td>
 			<td><input type="radio" name="Program" value="EAT"> BSc (External) in Electronics and Automation Technologies </td>
 		</tr>

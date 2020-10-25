@@ -4,6 +4,7 @@
 	<title>Manage User Accounts</title>
 	<link rel="stylesheet" type="text/css" href="../../css/css.css">
 	<link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
 		a{color: white; }
 		#button1,#button2{padding: 20px 20px;font-size: 200%; margin: 25% 5%}
@@ -16,6 +17,7 @@
   			text-decoration: none;
   			text-align: center;
 		}
+		body{font-family: 'Raleway', sans-serif;}
 	</style>
 </head>
 <body>
@@ -23,8 +25,8 @@
   		<a href="../Admin.php">Analyze System Performance</a>
   		<a class="active" href=" ./manage_accounts.php ">Manage User Accounts</a>
   		<a href=" ">Troubleshoot</a>
-  		<a href=" ">Account setting</a>
-  		<a href="../../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
+  		<a href="./account_setting.php">Account setting</a>
+  		<a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 25%">Log out</button></a>
 	</div>
 
 	<div class="content">

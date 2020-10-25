@@ -1,5 +1,5 @@
 <?php
-	include 'dbcon.php';
+	include ("../config/dbcon.php");
 
 	if(isset($_POST['regform'])){
 		$Fname = $_POST['Fname'];
@@ -53,19 +53,19 @@
 		$Relation1 = $_POST['Relationship1'];
 		$contact1 = $_POST['contact_no1'];
 
-		$sql4 = "INSERT INTO(NIC_No,Contact_Name,Relationship,ContactNo) VALUES('$NIC','$Name1','$Relation1','$contact1')";
+		$sql4 = "INSERT INTO student_emergency_contact(NIC_No,Contact_Name,Relationship,ContactNo) VALUES('$NIC','$Name1','$Relation1','$contact1')";
 		mysqli_query($conn,$sql4);
 
 		$Name2 = $_POST['Emerg_contact2'];
 		$Relation2 = $_POST['Relationship2'];
 		$contact2 = $_POST['contact_no2'];
 
-		$sql5 = "INSERT INTO(NIC_No,Contact_Name,Relationship,ContactNo) VALUES('$NIC','$Name2','$Relation2','$contact2')";
+		$sql5 = "INSERT INTO student_emergency_contact(NIC_No,Contact_Name,Relationship,ContactNo) VALUES('$NIC','$Name2','$Relation2','$contact2')";
 		mysqli_query($conn,$sql5);
 
 		//mobile number
 		$Mobile = $_POST['Mobile'];
-		$sql6 = "INSERT INTO(NIC_No,ContactNo) VALUES('$NIC','Mobile')";
+		$sql6 = "INSERT INTO student_contactno(NIC_No,ContactNo) VALUES('$NIC','Mobile')";
 		mysqli_query($conn,$sql6);
 
 		header("../index.php");

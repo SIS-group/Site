@@ -2,14 +2,14 @@
 
 	session_start();
 
-	include("dbcon.php");
+	include("../config/dbcon.php");
 	
 	if (isset($_POST['loginform']) && !empty($_POST['Username']) && !empty($_POST['Password'])) {
 
 	$username = mysqli_real_escape_string($conn,$_POST['Username']);
 	$password = mysqli_real_escape_string($conn,$_POST['Password']);
 	$type = $_POST['usertype'];
-	$error = "Login Name or Password is invalid";
+	$error = "Username or Password is invalid";
 
 	if($type == 'Student'){
 		$sql = "SELECT RegNo FROM student WHERE RegNo= '$username' and Password= '$password' ";
@@ -37,10 +37,10 @@
 		$count = mysqli_num_rows($result);
 
 		if($count == 1) {
-         	$_SESSION["username"] = $username;
+         	$_SESSION['login_user'] = $username;
 
          	if($role == "Director"){
-         		header("location: "); //Director page url
+         		header("location:../user_page/Director.php "); //Director page url
          		
          	}
          	elseif ($role =="program coordinator") {
@@ -48,7 +48,7 @@
          		
          	}
          	elseif ($role=="Examiner") {
-         		header("location: ");
+         		header("location:../user_page/ ");
          		
          	}
          	elseif ($role=="Assistant bursar") {
@@ -56,19 +56,19 @@
          		
          	}
          	elseif ($role=="Deputy Director Examination") {
-         		header("location: ");
+         		header("location:../user_page/deputydirector.php");
          		
          	}
          	elseif ($role=="Interview committee member") {
-         		header("location: user_page/interview_committee_member.php");
+         		header("location:../user_page/ ");
          		
          	}
          	elseif ($role=="Staff Assistant") {
-         		header("location: ");
+         		header("location:../user_page/ ");
          		
          	}
          	elseif ($role=="Assistant registrar") {
-         		header("location: ../user_page/assistant_registrar.php");
+         		header("location:../user_page/ ");
          		
          	}
         	
@@ -86,7 +86,7 @@
 		$count = mysqli_num_rows($result);
 
 		if($count == 1) {
-        	$_SESSION["username"] = $username;
+        	$_SESSION['login_user'] = $username;
         	header("location: ../user_page/admin.php");
     	}
     	else {
