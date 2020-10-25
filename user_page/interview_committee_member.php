@@ -24,7 +24,7 @@
 
     <body>
     <div class="sidebar">
-  		<a href="./interview_committee_member/studentpaymentdetails.php">Student Payment Details</a>
+  		<a href="./interview_committee_member/notifications.php">Notifications</a>
   		<a href=" ./interview_committee_member/account_settings.php">Account settings</a>
   		<a href="../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
 	</div>
