@@ -30,12 +30,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-dashboard fa-fw"></i>  Paper Marking Progress</a>
+    <a href="procordinator.php" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-dashboard fa-fw"></i>  Paper Marking Progress</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope"></i>  Notification</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users"></i>  Student Results & Grades</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye"></i>  Course Statistics</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user"></i>  Log Out</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog"></i>  Account Settings</a><br><br>
+    <a href="procordinator/PD2.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users"></i>  Student Results & Grades</a>
+    <a href="procordinator/PD1.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye"></i>  Course Statistics</a>
+    <a href="../Login/Logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user"></i>  Log Out</a>
+    <a href="procordinator/PD3.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog"></i>  Account Settings</a><br><br>
   </div>
 </nav>
 
