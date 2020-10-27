@@ -8,8 +8,8 @@
   <link rel="stylesheet" type="text/css" href="../css/css.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <style type="text/css">
-    table{background-color: white; padding: 10px 10px; border-radius: 10px ; margin-top: 5% ; margin-bottom: 5%;width: 40%}
-    th, td {padding: 10px;border-bottom: 1px solid #ddd;}
+    table{background-color: white; padding: 10px 10px; border-radius: 10px ; margin-top: 5% ; margin-bottom: 5%;width: 50%}
+    th, td {padding: 15px;border-bottom: 1px solid #ddd;}
     th{background-color: #002b80;border-radius: 10px;color: white}
     tr:hover {background-color: #f2f2f2;}
     body{font-family: 'Raleway', sans-serif;}
@@ -31,22 +31,7 @@
 	<div class="content">
   		
     <?php
-      include ("../config/dbcon.php");
-      include ("../config/session.php");
-      $active_user = $user;
-      // Check connection
-      if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-      }
-
-      $sql1 = "SELECT IndexNo FROM student WHERE RegNo='$user'";
-      $result1 = mysqli_query($conn, $sql1);
-      $row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
-      $index1 = $row1["IndexNo"];
-       
-
-      $sql2 = "SELECT student_result.CourseID,student_result.Result,course.Name,course.Year,course.Semester FROM course INNER JOIN student_result ON student_result.CourseID=course.CourseID WHERE student_result.IndexNo='$index1' ORDER BY course.Year,course.Semester";
-      $result2 = mysqli_query($conn, $sql2);
+      include ("./student/config/get_result.php");
       
       if (mysqli_num_rows($result2) > 0) {
         
@@ -66,7 +51,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>1 Year - 1st Semester Results</h3>
+                                <h3>1<sup>st</sup> Year - 1<sup>st</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }
@@ -86,7 +71,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>1 Year - 2nd Semester Results</h3>
+                                <h3>1<sup>st</sup> Year - 2<sup>nd</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }
@@ -106,7 +91,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>2nd Year - 1st Semester Results</h3>
+                                <h3>2<sup>nd</sup> Year - 1<sup>st</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }
@@ -123,7 +108,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>2nd Year - 2nd Semester Results</h3>
+                                <h3>2<sup>nd</sup> Year - 2<sup>nd</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }
@@ -142,7 +127,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>3rd Year - 1st Semester Results</h3>
+                                <h3>3<sup>rd</sup> Year - 1<sup>st</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }
@@ -158,7 +143,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>3rd Year - 2nd Semester Results</h3>
+                                <h3>3<sup>rd</sup> Year - 2<sup>nd</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }
@@ -177,7 +162,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>4th Year - 1st Semester Results</h3>
+                                <h3>4<sup>th</sup> Year - 1<sup>st</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }
@@ -193,7 +178,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>4th Year - 2nd Semester Results</h3>
+                                <h3>4<sup>th</sup> Year - 2<sup>nd</sup> Semester Results</h3>
                             </th>
                         </tr>";
               }

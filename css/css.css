@@ -1,5 +1,4 @@
-<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-body{background-color: #99bbff ; margin: 0px;font-family: 'Raleway', sans-serif;}
+body{background-color: #99bbff ; margin: 0px}
 input[type=text],input[type=password] {
   	border: 1px solid black;
   	border-radius: 10px;

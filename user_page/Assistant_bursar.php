@@ -16,24 +16,7 @@
 		#logout:hover{background-color: red}
 		body{font-family: 'Raleway', sans-serif;}
 	</style>
-
-	<script type="text/javascript">
-		function showimage(x) {
-			var modal = document.getElementById("myModal");
-			var img = document.getElementById(x);
-			var modalImg = document.getElementById("img01");
- 			modal.style.display = "block";
-  			modalImg.src = img.src;
-			var span = document.getElementsByClassName("close")[0];
-
-			span.onclick = function() { 
-  				modal.style.display = "none";
-			}
-		}
-	</script> 
-
-
-
+	<script src="../js/showimage.js"></script>
 </head>
 <body>
 	<div class="sidebar">
@@ -48,14 +31,7 @@
 	<div class="content">
 		<table align="center">
 		<?php
-			include ("../config/dbcon.php");
-			// Check connection
-			if (!$conn) {
-			  die("Connection failed: " . mysqli_connect_error());
-			}
-
-			$sql = "SELECT RegNo,Branch,PayDate,Pay_slip FROM student_payment WHERE Verified_status='Not Verified'";
-			$result = mysqli_query($conn, $sql);
+			include ("./Assistant_bursar/config/get_payslip.php");
 
 			if (mysqli_num_rows($result) > 0) {
 				echo "<tr>

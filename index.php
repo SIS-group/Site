@@ -32,7 +32,7 @@ session_start();
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 		}
-		body{font-family: 'Raleway', sans-serif;}
+		body{font-family: 'Raleway', sans-serif;background-color: #99bbff }
 		
 	</style>
 
@@ -95,7 +95,7 @@ session_start();
 			
 	</form>
 	<tr>
-		<td colspan="2"><a href="./Student_Reg_form.php" target="_self"><button style="width: 50%">Register</button></a><br></td>
+		<td colspan="2"><a href="./Student_Reg_form.html" target="_self"><button style="width: 50%">Register</button></a><br></td>
 	</tr>
 	<tr>
 		<td><a href="./Login/forgot_pass.php"><i>forgot password ?</i></a></td>

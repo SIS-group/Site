@@ -1,21 +1,5 @@
 <?php 
-	include ('../../config/session.php');
-	include ('../../config/dbcon.php');
-
-	if (isset($_POST['paysubmit'])) {
-
-		$active_user = $user;
-		$date = $_POST['payment_date'];
-		$branch = $_POST['bank_branch'];
-		$filename=$_FILES['payfile']['name'];
-		$filetmpname=$_FILES['payfile']['tmp_name'];
-		$folder='./Payslips/';
-
-		move_uploaded_file($filetmpname, $folder.$filename);
-
-		$sql = "INSERT INTO student_payment(RegNo,Branch,PayDate,Pay_slip) VALUES('$active_user','$branch','$date','$filename')";
-		mysqli_query($conn,$sql);
-	}
+	include ('./config/insert_payment.php');
 	mysqli_close($conn);
 
 ?>
@@ -28,12 +12,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
 		table{padding: 40px 40px;border-radius: 10px; background-color: white;text-align: center; margin-top: 5%;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 60%;
 		}
 		td{padding: 10px 10px}
 		input[type="date"]{border-radius: 10px; text-align: center;width: 90%}
+		input[type="text"]{width: 60%}
 		body{font-family: 'Raleway', sans-serif;}
-
+		th{background-color: #002b80;color: white;border-radius: 10px}
 	</style>
 </head>
 <body>
@@ -49,10 +34,15 @@
 	</div>
 		
 	<div class="content">
-		<h1 align="center">Enter payment details</h1>
+		
 		<form action="" method="post" enctype="multipart/form-data">
 		<table align="center">
 			<tr>
+				<th colspan="2">
+					<h1>Enter payment details</h1>
+				</th>
+			</tr>
+			<tr >
 				<td>
 					<b>Payment Date</b>
 				</td>

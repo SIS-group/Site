@@ -1,21 +1,5 @@
 <?php 
-					
-	include ('../../config/dbcon.php');
-	include ('../../config/session.php');
-
-	if (isset($_POST['medsubmit'])) {
-
-		$active_user = $user;
-		$date = $_POST['Med_date'];
-		$file_name=$_FILES['medfile']['name'];
-		$file_tmp_loc=$_FILES['medfile']['tmp_name'];
-		$file_store="./Medical_files/".$file_name;
-
-		move_uploaded_file($file_tmp_loc , $file_store);
-
-		$sql = "INSERT INTO student_medical(RegNo,MedDate,MedicalFile) VALUES('$active_user','$date','$file_name')";
-		mysqli_query($conn,$sql);
-	}
+	include ('./config/insert_medical.php');
 	mysqli_close($conn);
 
 ?>
@@ -28,11 +12,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
 		table{padding: 40px 40px;border-radius: 10px; background-color: white;text-align: center; margin-top: 5%;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 50%
 		}
 		td{padding: 10px 10px}
 		input[type="date"]{border-radius: 10px; text-align: center;width: 90%}
 		body{font-family: 'Raleway', sans-serif;}
+		th{background-color: #002b80;color: white;border-radius: 10px}
 	</style>
 </head>
 
@@ -50,10 +35,16 @@
 	</div>
 
 	<div class="content"> 
-		<h1 align="center">Medical Submission</h1>
+		
 	<div class="med">
 		<form action="" method="post" enctype="multipart/form-data">
 			<table align="center">
+				<tr>
+					<th>
+						<h1 align="center">Medical Submission</h1>
+					</th>
+				</tr>
+				
 				<tr>
 					<td><b>Enter Date</b> </td>
 				</tr>
