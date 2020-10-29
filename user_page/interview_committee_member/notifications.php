@@ -23,7 +23,7 @@
         <div class="sidebar">
   		    <a href="notifications.php">Notifications</a>
             <a href=" account_settings.php">Account settings</a>
-            <a href="../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
+            <a href="../../Login/Logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
         </div>
 
     </body>

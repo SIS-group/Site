@@ -59,16 +59,16 @@
          		header("location:../user_page/deputydirector.php");
          		
          	}
-         	elseif ($role=="Interview committee member") {
-         		header("location:../user_page/ ");
+         	elseif ($role=="Interview Commitee Member") {
+         		header("location:../user_page/interview_committee_member.php");
          		
          	}
          	elseif ($role=="Staff Assistant") {
          		header("location:../user_page/ ");
          		
          	}
-         	elseif ($role=="Assistant registrar") {
-         		header("location:../user_page/ ");
+         	elseif ($role=="Assistant Registrar") {
+         		header("location:../user_page/assistant_registrar.php");
          		
          	}
         	
