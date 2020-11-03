@@ -32,7 +32,8 @@ session_start();
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 		}
-		body{font-family: 'Raleway', sans-serif;background-color: #99bbff }
+		body{font-family: 'Raleway', sans-serif;background-color: #f2f2f2 }
+
 		
 	</style>
 
@@ -41,9 +42,9 @@ session_start();
 	<table align="center" width="20%" >
 	<form action="./login/login.php" method="post">
 			<tr>
-			<td colspan="2" >
-				<img src="./icons/logo.png" style="width:80px;height:80px;" >
-			</td>
+				<td colspan="2" >
+					<img src="./icons/logo.png" style="width:80px;height:80px;" >
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2" style="color: #002b80" id='login'><h1>LOGIN</h1></td>

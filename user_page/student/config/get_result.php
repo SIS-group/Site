@@ -1,13 +1,12 @@
 <?php 
-	include ("../config/dbcon.php");
-    include ("../config/session.php");
+    
     $active_user = $user;
       // Check connection
     if (!$conn) {
     	die("Connection failed: " . mysqli_connect_error());
     }
 
-	$sql1 = "SELECT IndexNo FROM student WHERE RegNo='$user'";
+	$sql1 = "SELECT IndexNo FROM student WHERE RegNo='$active_user'";
     $result1 = mysqli_query($conn, $sql1);
     $row1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
     $index1 = $row1["IndexNo"];

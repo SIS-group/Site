@@ -7,7 +7,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
 		a{color: white; }
-		#button1,#button2{padding: 20px 20px;font-size: 200%; margin: 25% 5%}
+		#button1,#button2{padding: 20px 20px;font-size: 200%; margin: 25% 10px}
+		#button1{margin-left: 150px}
 		#button1:hover{background-color: green;}
 		#button2:hover{background-color: red;}
 		.sidebar a {

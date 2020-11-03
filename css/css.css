@@ -1,4 +1,4 @@
-body{background-color: #99bbff ; margin: 0px}
+body{background-color: #f2f2f2 ; margin: 0px ;font-size: 15px}
 input[type=text],input[type=password] {
   	border: 1px solid black;
   	border-radius: 10px;

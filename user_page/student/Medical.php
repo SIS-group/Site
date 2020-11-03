@@ -9,9 +9,10 @@
 	<title>Medical submission</title>
 	<link rel="stylesheet" type="text/css" href="../../css/css.css">
 	<link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
+	<link rel="stylesheet" type="text/css" href="../../css/top_navigation.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{padding: 40px 40px;border-radius: 10px; background-color: white;text-align: center; margin-top: 5%;
+		table{padding: 40px 40px;border-radius: 10px; background-color: white;text-align: center;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 50%
 		}
 		td{padding: 10px 10px}
@@ -23,16 +24,26 @@
 
 <body>
 	<div class="sidebar">
-		<center><img src="../../icons/logo.png" style="width:80px;height:80px;" ></center>
-		<a href="../student.php">Results & Grades</a>
+		<center><img src="../../icons/logo.png" style="width:80px;height:80px;" >
+			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
+		</center>
+		<a href="../student.php">Home</a>
+		<a href="./results.php">Results & Grades</a>
   		<a class="active" href="./Medical.php">Medical Submission</a>
   		<a href="./course_reg.php">Course Registration</a>
   		<a href="./payment.php">Payment Details</a>
   		<a href="#contact">Notifications</a>
   		<a href="Account_Setting.php">Account setting</a>
-  		<a href="http://localhost/SIS/" target="_self" style="all:unset ;"><button style="margin-top: 20%;margin-left: 25%">Log out</button></a>
+  		<a href="../../login/logout.php" target="_self" style="all:unset ;"><button style="margin-top: 20%;margin-left: 25%">Log out</button></a>
 
 	</div>
+
+	<?php include("./config/get_name.php") ?>
+	
+	<ul>
+      <li style="margin-right: 250px"><img src="./Profile_photo/user.jpg" style="width: 60px;height: 60px;border-radius: 50%;"></li>
+      <li style="margin: 25px 10px"><?php echo $UserName; ?></li>
+    </ul>
 
 	<div class="content"> 
 		

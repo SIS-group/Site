@@ -11,7 +11,13 @@
 		$Div_Secretariat = $_POST['DS'];
 		$Zip = $_POST['Zip'];
 		$Gender = $_POST['Gender'];
-		$Mobile = $_POST['Mobile'];
+
+		$filename0=$_FILES['stu_photo']['name']; //profile photo
+		$filetmpname0=$_FILES['stu_photo']['tmp_name'];
+		$folder0='../user_page/student/Profile_photo';
+		move_uploaded_file($filetmpname0, $folder0.$filename0);
+		
+		
 		$Email = $_POST['Email'];
 		$Marital = $_POST['Marital'];
 		$Program = $_POST['Program'];
@@ -23,7 +29,8 @@
 			$Program = '1021';
 		}
 
-		$sql1 = "INSERT INTO student(Name,NIC,Address,District,Province,Divisional_Secretariat,Zip_Code,Email,DOB,Gender,Marital_status,Program) VALUES('$Fname','$NIC','$Address','$District','$Province','$Div_Secretariat','$Zip','$Email','$DOB','$Gender','$Marital','$Program')";
+		//insert data into student table
+		$sql1 = "INSERT INTO student(Name,NIC,Address,District,Province,Divisional_Secretariat,Zip_Code,Email,DOB,Gender,Marital_status,Program,Profile_picture) VALUES('$Fname','$NIC','$Address','$District','$Province','$Div_Secretariat','$Zip','$Email','$DOB','$Gender','$Marital','$Program','$filename0')";
 		mysqli_query($conn,$sql1);
 
 		//previous education files
@@ -65,8 +72,12 @@
 
 		//mobile number
 		$Mobile = $_POST['Mobile'];
-		$sql6 = "INSERT INTO student_contactno(NIC_No,ContactNo) VALUES('$NIC','Mobile')";
+		$sql6 = "INSERT INTO student_contactno(NIC_No,ContactNo) VALUES('$NIC','$Mobile')";
 		mysqli_query($conn,$sql6);
+
+		$Landline = $_POST['Landline'];
+		$sql7 = "INSERT INTO student_contactno(NIC_No,ContactNo) VALUES('$NIC','$Landline')";
+		mysqli_query($conn,$sql7);
 
 		header("../index.php");
 	}

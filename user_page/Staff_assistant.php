@@ -26,7 +26,7 @@
 		<a class="active" href="Assistant_bursar.php">Pay slip verification</a>
   		<a href="#contact">Notifications</a>
   		<a href="#about">Account setting</a>
-  		<a href="http://localhost/SIS/" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
+  		<a href="../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
 
 	</div>
 

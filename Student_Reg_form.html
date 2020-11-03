@@ -7,8 +7,8 @@
 		.main{ border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;margin-top: 5%;margin-bottom: 5%;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
-		.subtable{border-style: groove; border-radius:10px; padding: 5px 5px;border-width: 1px}
-		td{text-align: left; padding: 7px}
+		.subtable{border-style: groove; border-radius:10px; padding: 5px 5px;border-width: 1px;background-color: #F8F8FF;width: 100%}
+		td{text-align: left; padding: 15px}
 		th{text-align: center}
 		body{background-color: #99bbff;font-family: 'Raleway', sans-serif;}
 		input[type=text]{
@@ -80,12 +80,31 @@
 			</td>
 		</tr>
 		<tr>
+			<td>Landline No.</td>
+			<td><input type="text" name="Landline" placeholder="011XXXXXXX"></td>
+		</tr>
+		<tr>
 			<td>Mobile No.</td>
-			<td><input type="text" name="Mobile" placeholder="0774444444"></td>
+			<td><input type="text" name="Mobile" placeholder="07XXXXXXXX"></td>
 		</tr>
 		<tr>
 			<td>Email Address</td>
 			<td><input type="text" name="Email" placeholder="abc@mail.com"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table class="subtable" >
+					<tr>
+						<td>
+							Upload Student Photo<br>
+							<i style="font-size: 12px">(please upload passport size photo)</i>
+						</td>
+						<td id="file">
+							<input type="file" name="stu_file" id="stu_file">
+						</td>
+					</tr>
+				</table>
+			</td>
 		</tr>
 		<tr>
 			<td>Marital status</td>
@@ -111,7 +130,7 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<table class="subtable">
+				<table class="subtable" >
 					
 					<tr>
 						<td>
@@ -166,7 +185,7 @@
 		</tr>
 		<tr>
 			<td>
-				Mobile No			
+				Contact No			
 			</td>
 			<td>
 				<input type="text" name="contact_no1">
@@ -194,7 +213,7 @@
 		</tr>
 		<tr>
 			<td>
-				Mobile No			
+				Contact No			
 			</td>
 			<td>
 				<input type="text" name="contact_no2">
