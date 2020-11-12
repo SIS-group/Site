@@ -1,6 +1,5 @@
 <?php 
-	include ('../../config/session.php');
-	include ('../../config/dbcon.php');
+
 
 	if (isset($_POST['paysubmit'])) {
 

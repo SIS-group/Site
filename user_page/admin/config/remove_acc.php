@@ -1,5 +1,5 @@
 <?php 
-	include ('../../config/dbcon.php');
+	include ('../../../config/dbcon.php');
 	if(isset($_POST['Remove_account'])) {
 		$type = $_POST['user_type'];
 		$username = $_POST['Username'];
@@ -13,4 +13,6 @@
 		}
 
 	}
+	mysqli_close($conn);
+	header("location: ../create_accounts.php");
 ?>

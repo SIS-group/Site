@@ -1,7 +1,5 @@
 <?php 
-					
-	include ('../../config/dbcon.php');
-	include ('../../config/session.php');
+
 
 	if (isset($_POST['medsubmit'])) {
 

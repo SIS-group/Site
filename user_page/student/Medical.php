@@ -1,6 +1,5 @@
 <?php 
 	include ('./config/insert_medical.php');
-	mysqli_close($conn);
 
 ?>
 <!DOCTYPE html>
@@ -19,6 +18,8 @@
 		input[type="date"]{border-radius: 10px; text-align: center;width: 90%}
 		body{font-family: 'Raleway', sans-serif;}
 		th{background-color: #002b80;color: white;border-radius: 10px}
+
+
 	</style>
 </head>
 
@@ -32,17 +33,24 @@
   		<a class="active" href="./Medical.php">Medical Submission</a>
   		<a href="./course_reg.php">Course Registration</a>
   		<a href="./payment.php">Payment Details</a>
-  		<a href="#contact">Notifications</a>
-  		<a href="Account_Setting.php">Account setting</a>
-  		<a href="../../login/logout.php" target="_self" style="all:unset ;"><button style="margin-top: 20%;margin-left: 25%">Log out</button></a>
+  		<a href="../../login/logout.php" target="_self" style="all:unset ;"><button style="margin-top: 20%;margin-left: 25%" id="logout">Log out</button></a>
 
 	</div>
 
 	<?php include("./config/get_name.php") ?>
-	
-	<ul>
-      <li style="margin-right: 250px"><img src="./Profile_photo/user.jpg" style="width: 60px;height: 60px;border-radius: 50%;"></li>
-      <li style="margin: 25px 10px"><?php echo $UserName; ?></li>
+
+	<ul> 
+		<li style="margin-right: 275px" class="dropdown">
+			<img src="./Profile_photo/<?php echo $Userpic ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+			<div class="dropdown-content">
+      			<a href="Account_Setting.php">Setting</a>
+      			<a href="../../login/logout.php">Log out</a>
+    		</div>
+		</li>
+  		<li style="margin: 25px 20px"><?php echo $UserName; ?></li>
+  		<li > 
+  			<img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
+  		</li>
     </ul>
 
 	<div class="content"> 

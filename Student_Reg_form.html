@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration</title>
+	<title>Registration-Step 1</title>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-	<style type="text/css">
+
+	<style id="compiled-css" type="text/css">
 		.main{ border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;margin-top: 5%;margin-bottom: 5%;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
 		.subtable{border-style: groove; border-radius:10px; padding: 5px 5px;border-width: 1px;background-color: #F8F8FF;width: 100%}
 		td{text-align: left; padding: 15px}
 		th{text-align: center}
-		body{background-color: #99bbff;font-family: 'Raleway', sans-serif;}
+		body{background-color: #99bbff;font-family: 'Raleway', sans-serif;background-image: url('./icons/back.jpg');
+		background-repeat: no-repeat;background-attachment: fixed;background-position: center top;}
 		input[type=text]{
   			border: 1px solid grey;
   			border-radius: 10px;
@@ -31,15 +33,16 @@
 	</style>
 </head>
 <body>
-<form action="./login/Registration.php" method="post" enctype="multipart/form-data">
+<form action="./user_page/Student/Registration.php" method="post" enctype="multipart/form-data">
 	<table align="center" class="main">
+		
 		<tr>
-			<td colspan="2"><center>
-				<img src="./icons/logo.png" style="width:80px;height:80px;" >
+			<td colspan="2" style="background-color: #002b80;border-radius: 10px"><center>
+				<img src="./icons/ccuc.png" style="width:250px;height:65px;" >
 			</center></td>
 		</tr>
 		<tr>
-			<th colspan="2"><h1> Registration Form</h1></th>
+			<th colspan="2" style="color: #002b80"><h1>Online Application Form - Part 1</h1></th>
 		</tr>
 		<tr>
 			<td>Full Name</td>
@@ -75,8 +78,8 @@
 		</tr>
 		<tr>
 			<td>Gender</td>
-			<td><input type="radio" id="Male" name="Gender" value="Male"> Male
-				<input type="radio" id="Female" name="Gender" value="Female"> Female
+			<td><input type="radio" id="Male" name="Gender" value="Male"><label for="Male" style="margin-right: 50px">Male</label> 
+				<input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Female</label> 
 			</td>
 		</tr>
 		<tr>
@@ -97,10 +100,10 @@
 					<tr>
 						<td>
 							Upload Student Photo<br>
-							<i style="font-size: 12px">(please upload passport size photo)</i>
+							<i style="font-size: 12px">(please upload passport size photo &<br> rename it with your NIC number )</i>
 						</td>
 						<td id="file">
-							<input type="file" name="stu_file" id="stu_file">
+							<input type="file" name="stu_photo" id="stu_photo">
 						</td>
 					</tr>
 				</table>
@@ -108,115 +111,56 @@
 		</tr>
 		<tr>
 			<td>Marital status</td>
-			<td><input type="radio" name="Marital" value="Single">Single
-		
-			<input type="radio" name="Marital" value="Married">Married</td>
+			<td><input type="radio" name="Marital" value="Single" id="Single">
+				<label for="Single" style="margin-right: 20px">Single</label>
+				<input type="radio" name="Marital" value="Married" id="Married">
+				<label for="Married">Married</label>
+			</td>
 		</tr>
 		<tr>
 			<td rowspan="2">Program applying for</td>
-			<td><input type="radio" name="Program" value="EAT"> BSc (External) in Electronics and Automation Technologies </td>
+			<td><input type="radio" name="Program" value="EAT" id="EAT"> 
+				<label for="EAT">BSc (External) in Electronics and Automation Technologies</label>
+			</td>
 		</tr>
 		<tr>
 			<td>
-				<input type="radio" name="Program" value="FA"> BSc (External) in Financial Engineering
+				<input type="radio" name="Program" value="FA" id="FA"> 
+				<label for="FA">BSc (External) in Financial Engineering</label>
 			</td>
 		</tr>
-		<tr>
-			<td><u>Education Details</u></td>
-		</tr>
-		<tr>
-			<td>Ordinary Level (O/L)</td>
-			<td >Index No <input type="text" name="OLindex" style="width: 50% ;"></td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<table class="subtable" >
-					
-					<tr>
-						<td>
-							Upload the verified softcopy of the result sheet
-						</td>
-						<td id="file">
-							<input type="file" name="olfile" id="olfile">
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-		<tr><td colspan="2"></td></tr>
-		<tr>
-			<td>Advanced Level (A/L)</td>
-			<td >Index No <input type="text" name="ALindex" style="width: 50% ;"></td>
-		</tr>
+
 		<tr>
 			<td colspan="2">
 				<table class="subtable">
-					
 					<tr>
-						<td>
-							Upload the verified softcopy of the result sheet
-						</td>
-						<td id="file">
-							<input type="file" name="alfile" id="alfile">
+						<td>Application Fee (Rs. 1500.00)</td>
+					</tr>
+					<tr>
+						<td>Pay via:</td>
+						<td><input type="radio" name="payment" id="bank" value="bank"><label for="bank">Bank</label></td>
+						<td><input type="radio" name="payment" id="online" value="online"><label for="online">Online</label></td>
+					</tr>
+
+					<tr rowspan = "4" id="collapse_bank">
+						<td colspan="3">
+							Account Name - <b>Cyber Campus, University of Colombo</b> <br>
+							Account Number - <b>12055602334 </b><br>
+							Bank - <b>People's Bank, Thibirigasyaya</b> <br><br>
+							Upload the softcopy of Bank slip <input type="file" name="reg_fee_slip">
+						</td> 
+					</tr>
+					<tr id="collapse_online">
+						<td colspan="3"><center>
+							<button>
+								<a href="https://pay.cmb.ac.lk/" target="_blank" style="text-decoration: none;">
+								Processed with online payment
+								</a>
+							</button></center>
 						</td>
 					</tr>
 				</table>
-			</td>
-		</tr>
 
-		<tr>
-			<td colspan="2" ><u>Emergency Contact Details - 1</u></td>
-		</tr>
-		<tr>
-			<td>
-				Name			
-			</td>
-			<td>
-				<input type="text" name="Emerg_contact1">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Relationship to you			
-			</td>
-			<td>
-				<input type="text" name="Relationship1">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Contact No			
-			</td>
-			<td>
-				<input type="text" name="contact_no1">
-			</td>
-		</tr>
-
-		<tr>
-			<td colspan="2" ><u>Emergency Contact Details - 2</u></td>
-		</tr>
-		<tr>
-			<td>
-				Name			
-			</td>
-			<td>
-				<input type="text" name="Emerg_contact2">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Relationship to you			
-			</td>
-			<td>
-				<input type="text" name="Relationship2">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Contact No			
-			</td>
-			<td>
-				<input type="text" name="contact_no2">
 			</td>
 		</tr>
 
@@ -225,5 +169,6 @@
 		</tr>
 	</table>
 </form>
+
 </body>
 </html>

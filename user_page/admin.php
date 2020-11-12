@@ -1,84 +1,81 @@
-<?php 
-	
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Welocme Admin</title>
+  <link rel="stylesheet" type="text/css" href="../css/css.css">
 	<link rel="stylesheet" type="text/css" href="../css/sidepanel.css">
+  <link rel="stylesheet" type="text/css" href="../css/top_navigation.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		.sidebar a {
-  			display: block;
-  			color: black;
-  			padding: 15%;
-  			text-decoration: none;
-  			text-align: center;
-		}
-    .split{width: 50%;position: fixed;z-index: 1;}
-    .left{background-color: green;left: 10;}
-    .right{background-color: white;right: 0;left:10;}
-    body{font-family: 'Raleway', sans-serif;}
 
-    .masonry-brick {
-      color: #FFF;
-      background-color: #FF00D8;
-      display: inline-block;
-      padding: 5px;
-      width: 100%;
-      margin: 1em 0; /* for separating masonry-bricks vertically*/
+  body{font-family: 'Raleway', sans-serif;}
+  .site_visit {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px 20px;
+    border-radius: 10px;
+    background-color: white;
+  }
+  .site_visit img{
+    padding: 20px 140px;
+  }
+  .site_visit label{
+    padding: 50px 20px;
+  }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  padding: 20px;
 }
 
-@media only screen and (min-width: 480px) {
-    .masonry-container {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .masonry-container {
-        -moz-column-count: 4;
-        -webkit-column-count: 4;
-        column-count: 4;
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    .masonry-container {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
+.grid-container > div {
+  background-color: white;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
     
-	</style>
+</style>
 </head>
 <body>
 	<div class="sidebar">
-  		<a class="active" href="">Analyze System Performance</a>
-  		<a href=" ./Admin/manage_accounts.php ">Manage User Accounts</a>
-  		<a href=" ">Troubleshoot</a>
-  		<a href="./admin/account_setting.php">Account setting</a>
-  		<a href="../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 25%">Log out</button></a>
+      <center><img src="../icons/logo.png" style="width:80px;height:80px;" >
+      <div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
+      </center>
+  		<a class="active" href="">Dashboard</a>
+  		<a href="./Admin/manage_accounts.php ">Manage User Accounts</a>
+  		<a href="./Admin/prog_manage.php">Program Managment</a>
+  		<a href="./Admin/course_manage.php">Course Managment</a>
+  		<a href="../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
 	</div>
 
-	<div class="content">
-    <div class="masonry-container">
-        <div class="masonry-brick">
-          Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 
+  <ul> 
+    <li style="margin-right: 275px" class="dropdown">
+      <img src="../icons/default.png" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+      <div class="dropdown-content">
+            <a href="./admin/account_setting.php">Setting</a>
+            <a href="../login/logout.php">Log out</a>
         </div>
-        <div class="masonry-brick">
-          Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 
-        </div>
-        <div class="masonry-brick">
-          Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 
-        </div>
-        <div class="masonry-brick">
-          Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 Masonry pure CSS3 
-        </div>
+    </li>
+      <li style="margin: 25px 20px">Welcome , Admin</li>
+  </ul>
 
+	<div class="content">
+    <div class="site_visit">
+      <br><label>Site Visits this week</label><br>
+      <img src="../icons/site.png">
+    </div>
+    <div class="grid-container">
+      <div>
+        <font size="3px"> Active users </font>
+        <br> 47
+      </div>
+      <div>2</div>
+ 
+      
     </div>
   </div>
 

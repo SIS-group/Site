@@ -4,11 +4,16 @@ input[type=text],input[type=password] {
   	border-radius: 10px;
   	padding: 7px 20px;
 }
-button,input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 7px 40px;text-align: center;
- border-radius: 10px;display: inline-block;}
+input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 11px 40px;text-align: center;
+ border-radius: 25px;display: inline-block;font-size: 15px}
+
+button{background-color:#002b80 ;color: white;padding: 11px 40px;text-align: center;border-radius: 25px;
+	display: inline-block;font-size: 15px}
+
+button:hover{background-color: green}
 
 input[type="submit"]:hover{background-color: green;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 
 table{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 

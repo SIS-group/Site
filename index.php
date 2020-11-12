@@ -8,10 +8,10 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="./css/css.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;width: 30% ; margin-top:1%;
+		table{border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;width: 400px ; margin-top:1%;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
-		td{text-align: center; padding: 2px}
+		td{text-align: center; padding: 4px}
 
 		input[type="radio"] {opacity: 0;width: 0 ;position: fixed; }
 		label{background-color: #ddd;border: 1px solid #444;border-radius: 10px; width: 50%; padding: 10px 15px;display: inline-block;
@@ -25,6 +25,8 @@ session_start();
     		background-color: #bfb;
     		border-color: #4c4;
 		}
+		input[type="text"],input[type="password"]{border-radius: 25px ; width: 60%;height: 20px}
+		.logininput::placeholder{color: black;}
 		
 		input[type="submit"]{width: 50%}
 		button:hover,input[type="submit"]:hover{
@@ -32,13 +34,13 @@ session_start();
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 		}
-		body{font-family: 'Raleway', sans-serif;background-color: #f2f2f2 }
+		body{font-family: 'Raleway', sans-serif;background-image: url('./icons/back.jpg');}
 
 		
 	</style>
 
 </head>
-<body>
+<body >
 	<table align="center" width="20%" >
 	<form action="./login/login.php" method="post">
 			<tr>
@@ -61,17 +63,17 @@ session_start();
     				<label for="radiostaff">Staff Member</label>
 				</td>
 			</tr>
+
+			
 			<tr>
-				<td ><b>Username</b> </td>
+
+				<td>
+					<input type="text" name="Username" placeholder="Username" class="logininput">
+				</td>
 			</tr>
+			
 			<tr>
-				<td><input type="text" name="Username"></td>
-			</tr>
-			<tr>
-				<td ><b>Password</b> </td>
-			</tr>
-			<tr>
-				<td><input type="Password" name="Password"></td>
+				<td><input type="Password" name="Password" placeholder="Password" class="logininput"></td>
 			</tr>
 			<tr>
 				<td style="color: red"><i>
@@ -93,14 +95,16 @@ session_start();
 			<tr>
 				<td colspan="2" ><input type="submit" name="loginform" value="Login"></td>
 			</tr>
-			
 	</form>
 	<tr>
-		<td colspan="2"><a href="./Student_Reg_form.html" target="_self"><button style="width: 50%">Register</button></a><br></td>
+		<td colspan="2"><a href="./Student_Reg_form.html" target="_self">
+			<button style="width: 50%">Apply</button></a><br>
+		</td>
 	</tr>
 	<tr>
 		<td><a href="./Login/forgot_pass.php"><i>forgot password ?</i></a></td>
 	</tr>
+	
 	</table>
 </body>
 </html>

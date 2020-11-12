@@ -3,13 +3,19 @@
 	session_start();
 
 	include("../config/dbcon.php");
+
+	if (isset($_POST['loginform']) && (empty($_POST['Username'])||empty($_POST['Password']))) {
+		header("location: ../index.php");
+		$error="Username and Password can not be empty";
+		$_SESSION["error"] = $error;
+	}
 	
 	if (isset($_POST['loginform']) && !empty($_POST['Username']) && !empty($_POST['Password'])) {
 
-	$username = mysqli_real_escape_string($conn,$_POST['Username']);
-	$password = mysqli_real_escape_string($conn,$_POST['Password']);
-	$type = $_POST['usertype'];
-	$error = "Username or Password is invalid";
+		$username = mysqli_real_escape_string($conn,$_POST['Username']);
+		$password = mysqli_real_escape_string($conn,$_POST['Password']);
+		$type = $_POST['usertype'];
+		$error = "Username or Password is invalid";
 
 	if($type == 'Student'){
 		$sql = "SELECT RegNo FROM student WHERE RegNo= '$username' and Password= '$password' ";
@@ -59,16 +65,16 @@
          		header("location:../user_page/deputydirector.php");
          		
          	}
-         	elseif ($role=="Interview Commitee Member") {
-         		header("location:../user_page/interview_committee_member.php");
+         	elseif ($role=="Interview committee member") {
+         		header("location: ../user_page/ ");
          		
          	}
-         	elseif ($role=="Staff Assistant") {
+         	elseif ($role=="Staff assistant") {
+         		header("location: ../user_page/Staff_assistant.php ");
+         		
+         	}
+         	elseif ($role=="Assistant registrar") {
          		header("location:../user_page/ ");
-         		
-         	}
-         	elseif ($role=="Assistant Registrar") {
-         		header("location:../user_page/assistant_registrar.php");
          		
          	}
         	
