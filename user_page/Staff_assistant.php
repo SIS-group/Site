@@ -26,7 +26,7 @@
 			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
 		</center>
 		<a class="active" href="./ .php">Print Documents</a>
-		<a href=" ">Enter index numbers</a>
+		<a href=" ./Staff_assistant/enter_index.php">Enter index numbers</a>
   		<a href="./Staff_assistant/account_setting.php">Account setting</a>
   		<a href="../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
 
@@ -41,9 +41,13 @@
     		</div>
 		</li>
      	<li style="margin: 25px 20px"><?php echo "Welcome , Staff Assistant" ?></li>
-    	<li> 
-  			<img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
-  		</li>
+    	
+    	<li class="dropdown"> 
+        	<img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">
+        	<div class="dropdown-content1">
+            	<p>notifications are shown here</p>
+        	</div>
+      	</li>
     </ul>
 
 	<div class="content">

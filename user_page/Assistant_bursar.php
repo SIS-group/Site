@@ -41,9 +41,13 @@
     		</div>
 		</li>
      	<li style="margin: 25px 20px"><?php echo "Assistant bursar" ?></li>
-    	<li> 
-  			<img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
-  		</li>
+    	
+    	<li class="dropdown"> 
+        	<img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">
+        	<div class="dropdown-content1">
+            	<p>notifications are shown here</p>
+        	</div>
+      	</li>
     </ul>
 
 	<div class="content">

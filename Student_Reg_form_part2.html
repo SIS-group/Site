@@ -30,6 +30,7 @@
 		}
 
 	</style>
+	<script src="./js/image_validate.js"></script>
 </head>
 <body>
 <form action="./user_page/Student/Registration2.php" method="post" enctype="multipart/form-data">
@@ -44,14 +45,14 @@
 		</tr>
 		<tr>
 			<td>NIC No.</td>
-			<td><input type="text" name="NIC" ></td>
+			<td><input type="text" name="NIC" required></td>
 		</tr>
 		<tr>
 			<td><u><b>Education Details</b></u></td>
 		</tr>
 		<tr>
 			<td>Ordinary Level (O/L)</td>
-			<td >Index No <input type="text" name="OLindex" style="width: 50% ;"></td>
+			<td >Index No <input type="text" name="OLindex" style="width: 50% ;" required></td>
 		</tr>
 
 		<tr>
@@ -59,7 +60,7 @@
 				<table class="subtable" >
 					<tr>
 						<td>Upload the verified softcopy of the result sheet</td>
-						<td id="file"><input type="file" name="olfile" id="olfile"></td>
+						<td id="file"><input type="file" name="olfile" id="file" required onchange="return fileValidation()" accept=".jpg, .png, .jpeg"></td>
 					</tr>
 				</table>
 			</td>
@@ -67,14 +68,14 @@
 		<tr><td colspan="2"></td></tr>
 		<tr>
 			<td>Advanced Level (A/L)</td>
-			<td >Index No <input type="text" name="ALindex" style="width: 50% ;"></td>
+			<td >Index No <input type="text" name="ALindex" style="width: 50% ;" required></td>
 		</tr>
 		<tr>
 			<td colspan="2">
 				<table class="subtable">
 					<tr>
 						<td>Upload the verified softcopy of the result sheet</td>
-						<td id="file"><input type="file" name="alfile" id="alfile"></td>
+						<td id="file"><input type="file" name="alfile" id="file2" required onchange="return fileValidation()" accept=".jpg, .png, .jpeg"></td>
 					</tr>
 				</table>
 			</td>
@@ -85,15 +86,15 @@
 		</tr>
 		<tr>
 			<td>Name</td>
-			<td><input type="text" name="Emerg_contact1"></td>
+			<td><input type="text" name="Emerg_contact1" required></td>
 		</tr>
 		<tr>
 			<td>Relationship to you</td>
-			<td><input type="text" name="Relationship1"></td>
+			<td><input type="text" name="Relationship1" required></td>
 		</tr>
 		<tr>
 			<td>Contact No</td>
-			<td><input type="text" name="contact_no1"></td>
+			<td><input type="text" name="contact_no1" required></td>
 		</tr>
 
 		<tr>
@@ -101,15 +102,15 @@
 		</tr>
 		<tr>
 			<td>Name</td>
-			<td><input type="text" name="Emerg_contact2"></td>
+			<td><input type="text" name="Emerg_contact2" ></td>
 		</tr>
 		<tr>
 			<td>Relationship to you</td>
-			<td><input type="text" name="Relationship2"></td>
+			<td><input type="text" name="Relationship2" ></td>
 		</tr>
 		<tr>
 			<td>Contact No</td>
-			<td><input type="text" name="contact_no2"></td>
+			<td><input type="text" name="contact_no2" ></td>
 		</tr>
 
 		<tr>

@@ -11,7 +11,7 @@
     	table{background-color: white; padding: 10px 10px; border-radius: 10px ;margin-bottom: 5%;width: 80%}
     	th, td {padding: 10px;border-bottom: 1px solid #ddd;}
     	body{font-family: 'Raleway', sans-serif;}
-    	tr:hover {background-color: #f2f2f2;}
+    	#course tr:hover {background-color: #f2f2f2;}
   	</style>
 </head>
 <body>
@@ -38,13 +38,27 @@
     		</div>
 		</li>
      	<li style="margin: 25px 20px"><?php echo $UserName; ?></li>
-    	<li> 
-  			<img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
-  		</li>
+    	
+    	<li class="dropdown"> 
+        	<img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">
+        	<div class="dropdown-content1">
+            	<p>notifications are shown here</p>
+        	</div>
+      	</li>
     </ul>
 
 	<div class="content">
-		<table align="center">
+		<table style="width: 40%" align="center">
+			<tr>
+				<td style="border-bottom: unset;">
+					<b>Minimum Credits left to register</b>
+				</td>
+				<td style="background-color: #002b80;color: white;border-radius: 10px" align="center">
+					6
+				</td>
+			</tr>
+		</table>
+		<table align="center" id="course">
 		<?php
       		include ("./config/course_regi.php");
       		

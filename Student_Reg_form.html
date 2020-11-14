@@ -23,6 +23,12 @@
   			float: center;
   			width: 80%;
 		}
+		input[type=date]{
+			border-radius: 10px;
+		}
+		input[type=email]{
+			border-radius: 10px;padding: 5px 0px;width: 80%
+		}
 		input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; margin: 0% 40% ;}
 
 		input[type=submit]:hover{
@@ -31,6 +37,8 @@
 		}
 
 	</style>
+
+	<script src="./js/image_validate.js"></script>
 </head>
 <body>
 <form action="./user_page/Student/Registration.php" method="post" enctype="multipart/form-data">
@@ -45,36 +53,40 @@
 			<th colspan="2" style="color: #002b80"><h1>Online Application Form - Part 1</h1></th>
 		</tr>
 		<tr>
+			<td>Name with initials</td>
+			<td><input type="text" name="Iname" required></td>
+		</tr>
+		<tr>
 			<td>Full Name</td>
-			<td><input type="text" name="Fname" ></td>
+			<td><input type="text" name="Fname" required></td>
 		</tr>
 		<tr>
 			<td>Birthday</td>
-			<td><input type="text" name="DOB" placeholder="YYYY-MM-DD"></td>
+			<td><input type="date" name="DOB" placeholder="YYYY-MM-DD" required></td>
 		</tr>
 		<tr>
 			<td>NIC No.</td>
-			<td><input type="text" name="NIC" ></td>
+			<td><input type="text" name="NIC" required></td>
 		</tr>
 		<tr>
 			<td>Address</td>
-			<td><input type="text" name="Address" ></td>
+			<td><input type="text" name="Address" required></td>
 		</tr>
 		<tr>
 			<td>District</td> 
-			<td><input type="text" name="District" ></td>
+			<td><input type="text" name="District" required></td>
 		<tr>
 		<tr>
 			<td>Province </td>
-			<td><input type="text" name="Province"></td>
+			<td><input type="text" name="Province" required></td>
 		</tr>
 		<tr>
 			<td>Divisional Secretariat</td>
-			<td><input type="text" name="DS"></td>
+			<td><input type="text" name="DS" required></td>
 		</tr>
 		<tr>
 			<td>Zip Code </td>
-			<td><input type="text" name="Zip"></td>
+			<td><input type="text" name="Zip" required></td>
 		</tr>
 		<tr>
 			<td>Gender</td>
@@ -88,11 +100,11 @@
 		</tr>
 		<tr>
 			<td>Mobile No.</td>
-			<td><input type="text" name="Mobile" placeholder="07XXXXXXXX"></td>
+			<td><input type="text" name="Mobile" placeholder="07XXXXXXXX" required maxlength="10"></td>
 		</tr>
 		<tr>
 			<td>Email Address</td>
-			<td><input type="text" name="Email" placeholder="abc@mail.com"></td>
+			<td><input type="email" name="Email" placeholder="abc@mail.com" required></td>
 		</tr>
 		<tr>
 			<td colspan="2">
@@ -100,10 +112,11 @@
 					<tr>
 						<td>
 							Upload Student Photo<br>
-							<i style="font-size: 12px">(please upload passport size photo &<br> rename it with your NIC number )</i>
+							<i style="font-size: 12px">(please upload passport size photo &<br> rename it with your NIC number )<br> File types - jpeg , jpg , png
+							</i>
 						</td>
-						<td id="file">
-							<input type="file" name="stu_photo" id="stu_photo">
+						<td >
+							<input type="file" name="stu_photo" id="file" required onchange="return fileValidation()" accept=".jpg, .png, .jpeg">
 						</td>
 					</tr>
 				</table>
@@ -147,7 +160,8 @@
 							Account Name - <b>Cyber Campus, University of Colombo</b> <br>
 							Account Number - <b>12055602334 </b><br>
 							Bank - <b>People's Bank, Thibirigasyaya</b> <br><br>
-							Upload the softcopy of Bank slip <input type="file" name="reg_fee_slip">
+							Upload the softcopy of Bank slip 
+							<input type="file" name="reg_fee_slip" accept=".jpg, .png, .jpeg" id="file2" required onchange="return fileValidation()">
 						</td> 
 					</tr>
 					<tr id="collapse_online">

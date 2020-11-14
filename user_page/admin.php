@@ -22,21 +22,21 @@
     padding: 50px 20px;
   }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 20px;
-  padding: 20px;
-}
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    padding: 20px;
+  }
 
-.grid-container > div {
-  background-color: white;
-  text-align: center;
-  padding: 40px 0;
-  font-size: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
+  .grid-container > div {
+    background-color: white;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
     
 </style>
 </head>
@@ -73,7 +73,9 @@
         <font size="3px"> Active users </font>
         <br> 47
       </div>
-      <div>2</div>
+      <div>
+          Recently Log on users
+      </div>
  
       
     </div>

@@ -58,9 +58,10 @@
 
 .item2 {
   grid-column: 1 / 2;
-  grid-row: 1/3;
+  grid-row: 1/2;
 }
   </style>
+
 </head>
 <body>
 	
@@ -77,21 +78,25 @@
 	  </div>
 
     <?php
-
     include("./student/config/get_name_forstudentpage.php");
     ?>
 
     <ul>
       <li style="margin-right: 258px" class="dropdown">
-      <img src="./student/Profile_photo/<?php echo $Userpic ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
-      <div class="dropdown-content">
+        <img src="./student/Profile_photo/<?php echo $Userpic ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+        <div class="dropdown-content">
             <a href="./student/Account_Setting.php">Setting</a>
             <a href="../login/logout.php">Log out</a>
         </div>
       </li>
+      
       <li style="margin: 25px 20px"><?php echo $UserName; ?></li>
-      <li > 
-        <img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
+
+      <li class="dropdown"> 
+        <img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">
+        <div class="dropdown-content1">
+            <p>notifications are shown here</p>
+        </div>
       </li>
     </ul>
 

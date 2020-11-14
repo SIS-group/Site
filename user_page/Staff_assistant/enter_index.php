@@ -17,17 +17,7 @@
 		body{font-family: 'Raleway', sans-serif;}
 		th{background-color: #002b80;color: white;border-radius: 10px ;margin-bottom: 50px}
 	</style>
-	<script type="text/javascript">
-	function check_PassMatch() {
-    	var password = $("#newpass").val();
-    	var confirmPassword = $("#confirmpass").val();
-
-    	if (password != confirmPassword)
-        	$("#divCheckPasswordMatch").html("Passwords do not match!");
-    	else
-        	$("#divCheckPasswordMatch").html(" ");
-	}
-	</script>
+	
 </head>
 <body>
 	<div class="sidebar">
@@ -36,8 +26,8 @@
 			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
 		</center>
 		<a href="../staff_assistant.php">Print Documents</a>
-		<a href="./enter_index.php ">Enter index numbers</a>
-  		<a class="active" href=" ">Account setting</a>
+		<a class="active" href=" ">Enter Index & Registration numbers</a>
+  		<a href="./account_setting.php">Account setting</a>
   		<a href="../../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
 
 	</div>
@@ -51,48 +41,14 @@
     		</div>
 		</li>
      	<li style="margin: 25px 20px"><?php echo "Welcome , Staff Assistant" ?></li>
-    	
-    	<li class="dropdown"> 
-        	<img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">
-        	<div class="dropdown-content1">
-            	<p>notifications are shown here</p>
-        	</div>
-      	</li>
+    	<li> 
+  			<img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
+  		</li>
     </ul>
 
 	<div class="content">
 		
-		<form action="" method="post">
-			<table align="center">
-				<tr>
-					<th colspan="2">
-						<h1 align="center">Account Setting</h1>
-					</th>
-				</tr>
-				<tr>
-					<td>Profile picture</td>
-					<td><input type="file" name="profile_pic"></td>
-				</tr>
-				<tr>
-					<td>Current Password</td>
-					<td><input type="Password" name="Curr_Password"></td>
-				</tr>
-				<tr>
-					<td>New Password</td>
-					<td><input type="Password" name="Password" id="newpass"></td>
-				</tr>
-				<tr>
-					<td>Confirm Password</td>
-					<td><input type="Password" name="Conf_Password" id="confirmpass" onkeyup="check_PassMatch();"></td>
-				</tr>
-				<tr style="color: red"><i>
-					<td colspan="2" id="divCheckPasswordMatch"></td>
-				</i></tr>
-				<tr>
-					<td colspan="2"><input type="submit" name="changes" value="Save"></td>
-				</tr>
-			</table>
-		</form>
+		
 
 	</div>
 </body>

@@ -42,7 +42,7 @@ session_start();
 </head>
 <body >
 	<table align="center" width="20%" >
-	<form action="./login/login.php" method="post">
+	<form action="./login/login.php" method="post" >
 			<tr>
 				<td colspan="2" >
 					<img src="./icons/logo.png" style="width:80px;height:80px;" >
@@ -87,9 +87,9 @@ session_start();
 			</tr>
 			<tr>
 				<td>
-					<input type="checkbox" name="passrem">
-				
-					<i>remember me</i>
+						<input type="checkbox" name="passrem">
+					
+						<i>remember me</i>
 				</td>
 			</tr>
 			<tr>
@@ -97,12 +97,17 @@ session_start();
 			</tr>
 	</form>
 	<tr>
-		<td colspan="2"><a href="./Student_Reg_form.html" target="_self">
-			<button style="width: 50%">Apply</button></a><br>
-		</td>
+		<td style="border-bottom: 1px solid #ddd;"><a href="./Login/forgot_pass.php"><i>forgot password ?</i></a></td>
 	</tr>
 	<tr>
-		<td><a href="./Login/forgot_pass.php"><i>forgot password ?</i></a></td>
+		<td>
+			<i>New Student?</i>
+		</td>
+	</tr>
+	<tr >
+		<td colspan="2" ><a href="./Student_Reg_form.html" target="_self">
+			<button style="width: 50%">Apply</button></a><br>
+		</td>
 	</tr>
 	
 	</table>

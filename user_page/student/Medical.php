@@ -15,7 +15,7 @@
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width: 50%
 		}
 		td{padding: 10px 10px}
-		input[type="date"]{border-radius: 10px; text-align: center;width: 90%}
+		input[type="date"]{border-radius: 10px; text-align: center;width: 60%}
 		body{font-family: 'Raleway', sans-serif;}
 		th{background-color: #002b80;color: white;border-radius: 10px}
 
@@ -48,37 +48,28 @@
     		</div>
 		</li>
   		<li style="margin: 25px 20px"><?php echo $UserName; ?></li>
-  		<li > 
-  			<img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
-  		</li>
+  		
+  		<li class="dropdown"> 
+        	<img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">
+        	<div class="dropdown-content1">
+            	<p>notifications are shown here</p>
+        	</div>
+      	</li>
     </ul>
 
 	<div class="content"> 
-		
+	
+
 	<div class="med">
 		<form action="" method="post" enctype="multipart/form-data">
 			<table align="center">
-				<tr>
-					<th>
-						<h1 align="center">Medical Submission</h1>
-					</th>
+				<tr><th><h2 align="center">Medical Submission</h2></th></tr>
+				<tr><td><b>Enter Date</b> </td></tr>
+				<tr><td><input type="date" name="Med_date"></td></tr>
+				<tr><td><b>Upload the file</b></td></tr>
+				<tr><td><input type="file" id="medfile" name="medfile" style="border:1px dashed black;border-radius:10px;padding: 30px 30px "></td>
 				</tr>
-				
-				<tr>
-					<td><b>Enter Date</b> </td>
-				</tr>
-				<tr>
-					<td><input type="date" name="Med_date"></td>
-				</tr>
-				<tr>
-					<td><b>Upload the file</b></td>
-				</tr>
-				<tr>
-					<td><input type="file" id="medfile" name="medfile"></td>
-				</tr>
-				<tr>
-					<td><input type="submit" name="medsubmit" value="Submit"></td>
-				</tr>
+				<tr><td><input type="submit" name="medsubmit" value="Submit"></td></tr>
 			</table>
 
 			

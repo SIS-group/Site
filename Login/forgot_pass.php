@@ -21,8 +21,9 @@
 	<link rel="stylesheet" type="text/css" href="../css/css.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		.forgotform{ padding: 10px 10px;border-radius: 10px; background-color: white; width: 30% ; margin-top: 10%}
-		body{font-family: 'Raleway', sans-serif;background-color: #99bbff }
+		.forgotform{ padding: 20px 20px;border-radius: 10px; background-color: white; width: 30% ; margin-top: 10%}
+		input[type="text"]{width: 50%}
+		body{font-family: 'Raleway', sans-serif;background-image: url('../icons/back.jpg');}
 		.forgotform{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 	</style>
 </head>
