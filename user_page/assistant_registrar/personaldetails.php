@@ -8,93 +8,24 @@
         $search = mysqli_real_escape_string($conn,$_POST['searchby']);
 
         $sql1 = " SELECT Name,Address,District,Province,Email,DOB,Gender,Marital_status FROM student WHERE $search LIKE '%$text%' ";
-        $result = mysqli_query($conn,$sql1);
+        $result1 = mysqli_query($conn,$sql1);
+
+        $sql2 = " SELECT student.NIC, student_emergency_contact.Contact_Name, student_emergency_contact.Relationship, student_emergency_contact.ContactNo FROM student INNER JOIN student_emergency_contact WHERE student.NIC = student_emergency_contact.NIC_No AND student.$search LIKE '%$text%' ";
+        $result2 = mysqli_query($conn,$sql2);
+
+        $sql3 = " SELECT student_contactno.ContactNo FROM student INNER JOIN student_contact WHERE student.NIC = student_contactno.NIC_No AND student.$search LIKE '%$text%'";
         
-        if (!$result) {
+        if (!$result1) {
             printf("Error: %s\n", mysqli_error($conn));
             exit();
         }
 
-        if (mysqli_num_rows($result) > 0) 
+        if (mysqli_num_rows($result1) > 0) 
         {
-            while($row = mysqli_fetch_assoc($result)) 
-            {?>
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <style>
-                            .container1{
-                                border-radius: 5px;
-                                background-color:darkcyan;
-                                padding: 20px;
-                            } 
-                            table 
-                            {
-                                font-family: arial, sans-serif;
-                                border-collapse: collapse;
-                                width: 100%;
-                            }
-                            th
-                            {
-                                border-radius: 1px;
-                                background-color:darkgray;
-                                padding: 8px;
-                                height: 25px;
-                            }
-                            td
-                            {
-                                border: 1px solid #dddddd;
-                                text-align: left;
-                                padding: 8px;
-                            }
-
-                            tr:nth-child(even) 
-                            {
-                                background-color: #dddddd;
-                            }
-                        </style>
-                    </head>
-                    <body style="background-color:lavender;">
-                        <div class="container1">
-                            <p style="color:cornsilk; font-size:160%;">Personal Details of <?php echo $text?></p>
-                        </div>
-                        <table>
-                            <tr>
-                                <td>Name</td>
-                                <td><?php echo $row["Name"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>   
-                                <td><?php echo $row["Address"]?></td>
-                            </tr>
-                            <tr>
-                                <td>District</td>  
-                                <td><?php echo $row["District"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Province</td>  
-                                <td><?php echo $row["Province"]?></td>
-                            </tr>
-                            <tr>
-                                <td>email</td>  
-                                <td><?php echo $row["Email"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Date of Birth</td>  
-                                <td><?php echo $row["DOB"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>  
-                                <td><?php echo $row["Gender"]?></td>
-                            </tr>
-                            <tr>
-                                <td>Marital_status</td>  
-                                <td><?php echo $row["Marital_status"]?></td>
-                            </tr>
-                        </table>
-                    </body>
-                </html>
-            <?php
+            while($row1 = mysqli_fetch_assoc($result1)) 
+            {
+                include("displaypersonaldetails.php");
+                
             }
         }
 
