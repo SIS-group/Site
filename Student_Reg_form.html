@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration-Step 1</title>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+	<style id="compiled-css" type="text/css">
+		.main{ border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;margin-top: 5%;margin-bottom: 5%;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		.subtable{border-style: groove; border-radius:10px; padding: 5px 5px;border-width: 1px;background-color: #F8F8FF;width: 100%}
+		td{text-align: left; padding: 15px}
+		th{text-align: center}
+		body{background-color: #99bbff;font-family: 'Raleway', sans-serif;background-image: url('./icons/back.jpg');
+		background-repeat: no-repeat;background-attachment: fixed;background-position: center top;}
+		input[type=text]{
+  			border: 1px solid grey;
+  			border-radius: 10px;
+  			padding: 7px 10px;
+  			box-sizing: border-box;
+  			text-align: left;
+  			align-self: center;
+  			float: center;
+  			width: 80%;
+		}
+		input[type=date]{
+			border-radius: 10px;
+		}
+		input[type=email]{
+			border-radius: 10px;padding: 5px 0px;width: 80%
+		}
+		input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; margin: 0% 40% ;}
+
+		input[type=submit]:hover{
+			background-color: green;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+
+	</style>
+
+	<script src="./js/image_validate.js"></script>
+</head>
+<body>
+<form action="./user_page/Student/Registration.php" method="post" enctype="multipart/form-data">
+	<table align="center" class="main">
+		
+		<tr>
+			<td colspan="2" style="background-color: #002b80;border-radius: 10px"><center>
+				<img src="./icons/ccuc.png" style="width:250px;height:65px;" >
+			</center></td>
+		</tr>
+		<tr>
+			<th colspan="2" style="color: #002b80"><h1>Online Application Form - Part 1</h1></th>
+		</tr>
+		<tr>
+			<td>Name with initials</td>
+			<td><input type="text" name="Iname" required></td>
+		</tr>
+		<tr>
+			<td>Full Name</td>
+			<td><input type="text" name="Fname" required></td>
+		</tr>
+		<tr>
+			<td>Birthday</td>
+			<td><input type="date" name="DOB" placeholder="YYYY-MM-DD" required></td>
+		</tr>
+		<tr>
+			<td>NIC No.</td>
+			<td><input type="text" name="NIC" required></td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td><input type="text" name="Address" required></td>
+		</tr>
+		<tr>
+			<td>District</td> 
+			<td><input type="text" name="District" required></td>
+		<tr>
+		<tr>
+			<td>Province </td>
+			<td><input type="text" name="Province" required></td>
+		</tr>
+		<tr>
+			<td>Divisional Secretariat</td>
+			<td><input type="text" name="DS" required></td>
+		</tr>
+		<tr>
+			<td>Zip Code </td>
+			<td><input type="text" name="Zip" required></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td><input type="radio" id="Male" name="Gender" value="Male"><label for="Male" style="margin-right: 50px">Male</label> 
+				<input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Female</label> 
+			</td>
+		</tr>
+		<tr>
+			<td>Landline No.</td>
+			<td><input type="text" name="Landline" placeholder="011XXXXXXX"></td>
+		</tr>
+		<tr>
+			<td>Mobile No.</td>
+			<td><input type="text" name="Mobile" placeholder="07XXXXXXXX" required maxlength="10"></td>
+		</tr>
+		<tr>
+			<td>Email Address</td>
+			<td><input type="email" name="Email" placeholder="abc@mail.com" required></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table class="subtable" >
+					<tr>
+						<td>
+							Upload Student Photo<br>
+							<i style="font-size: 12px">(please upload passport size photo &<br> rename it with your NIC number )<br> File types - jpeg , jpg , png
+							</i>
+						</td>
+						<td >
+							<input type="file" name="stu_photo" id="file" required onchange="return fileValidation()" accept=".jpg, .png, .jpeg">
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Marital status</td>
+			<td><input type="radio" name="Marital" value="Single" id="Single">
+				<label for="Single" style="margin-right: 20px">Single</label>
+				<input type="radio" name="Marital" value="Married" id="Married">
+				<label for="Married">Married</label>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Program applying for</td>
+			<td><input type="radio" name="Program" value="EAT" id="EAT"> 
+				<label for="EAT">BSc (External) in Electronics and Automation Technologies</label>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="Program" value="FA" id="FA"> 
+				<label for="FA">BSc (External) in Financial Engineering</label>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<table class="subtable">
+					<tr>
+						<td>Application Fee (Rs. 1500.00)</td>
+					</tr>
+					<tr>
+						<td>Pay via:</td>
+						<td><input type="radio" name="payment" id="bank" value="bank"><label for="bank">Bank</label></td>
+						<td><input type="radio" name="payment" id="online" value="online"><label for="online">Online</label></td>
+					</tr>
+
+					<tr rowspan = "4" id="collapse_bank">
+						<td colspan="3">
+							Account Name - <b>Cyber Campus, University of Colombo</b> <br>
+							Account Number - <b>12055602334 </b><br>
+							Bank - <b>People's Bank, Thibirigasyaya</b> <br><br>
+							Upload the softcopy of Bank slip 
+							<input type="file" name="reg_fee_slip" accept=".jpg, .png, .jpeg" id="file2" required onchange="return fileValidation()">
+						</td> 
+					</tr>
+					<tr id="collapse_online">
+						<td colspan="3"><center>
+							<button>
+								<a href="https://pay.cmb.ac.lk/" target="_blank" style="text-decoration: none;">
+								Processed with online payment
+								</a>
+							</button></center>
+						</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="regform" value="Submit"></td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>
