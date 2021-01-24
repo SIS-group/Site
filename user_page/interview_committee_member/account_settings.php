@@ -55,7 +55,7 @@
         </ul>
 
         <div class="content" align="center">
-        <form name="account settings" method="POST" action="password_settings.php">
+        <form name="account settings" method="POST" action="./config/password_settings.php">
             <table>
                 <!-- <p style="font-size:160%; ">Change Password</p> -->
                 <tr>
@@ -65,15 +65,15 @@
                 </tr>
                 <tr>
                     <td>Current Password</td>
-                    <td><input type="password" name="current_password"></td>
+                    <td><input type="password" name="current_password" required></td>
                 </tr>
                 <tr>
                     <td>New Password</td>
-                    <td><input type="password" name="new_password"></td>
+                    <td><input type="password" name="new_password" required></td>
                 </tr>
                 <tr>
                     <td>Confirm Password</td>
-                    <td><input type="password" name="confirm_password"></td>
+                    <td><input type="password" name="confirm_password" required></td>
                 </tr>
                 <tr>
                     <td></td>

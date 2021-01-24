@@ -60,7 +60,7 @@
 
         <div class="content" align="center">
             <!-- <p style="font-size: 160%;" >Search by the student's: </p> -->
-            <form name="studentpersonaldata" method="POST" action="personaldetails.php">
+            <form name="studentpersonaldata" method="POST" action="./personaldetails.php">
                 <table>
                     <tr>
                         <th colspan="2">
@@ -90,12 +90,12 @@
                         </td>
                     </tr>
 
-                    <tr>
+                    <!-- <tr>
                         <td>
                             <input type="radio" name="searchby" value="Name">
                             <label for="name">Name</label><br>
                         </td>
-                    </tr>
+                    </tr> -->
 
                     <tr>
                         <td>

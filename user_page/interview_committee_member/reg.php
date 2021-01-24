@@ -5,9 +5,11 @@
     if ( isset($_POST["search"]) )
     {
         $text = mysqli_real_escape_string($conn,$_POST['searchtext']);
-        $search = mysqli_real_escape_string($conn,$_POST['searchby']);
+        $program = mysqli_real_escape_string($conn,$_POST['program']);
+        //echo $program;
+        //$search = mysqli_real_escape_string($conn,$_POST['searchby']);
 
-        $sql1 = " SELECT * FROM student WHERE $search='$text' ";
+        $sql1 = " SELECT * FROM student WHERE NIC='$text' AND Program='$program' ";
 
         $result1 = mysqli_query($conn,$sql1);
 
@@ -15,9 +17,7 @@
             printf("Error: %s\n", mysqli_error($conn));
             exit();
         }
-
-        if (mysqli_num_rows($result1) > 0) 
-        {?>
+        ?>
         <!DOCTYPE html>
         <html>
             <head>
@@ -76,7 +76,7 @@
                     <a href="../interview_committee_member.php">Interviews</a>
                     <!-- <a href="notifications.php">Notifications</a> -->
                     <a href=" account_settings.php">Account settings</a>
-                    <a href="../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
+                    <a href="../../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
                 </div>
                 <ul>
                     <li style="margin-right: 270px" class="dropdown">
@@ -95,9 +95,20 @@
                         </div>
                     </li>
                 </ul>
+        <?php
 
+        if (mysqli_num_rows($result1) == 0)
+        {?>
+            <div class="content" align="center">
+                    <div class="container1">
+                        <p style="color:cornsilk; font-size:160%;">No result found</p>
+                    </div> 
+                </div> 
+        <?php
+        }
 
-            <?php
+        if (mysqli_num_rows($result1) > 0) 
+        {
             $num =0;
             while($row = mysqli_fetch_assoc($result1)) 
             {

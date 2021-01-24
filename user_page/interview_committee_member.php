@@ -69,7 +69,7 @@
                 <table>
                     <tr>
                         <th colspan="2">
-                            <p style="font-size: 160%">Search by the student's: </p>
+                            <p style="font-size: 160%">Search by student's: </p>
                         </th>
                     </tr>
                     <tr>
@@ -82,7 +82,7 @@
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>
                             <input type="radio"  name="searchby" value="NIC">
                             <label for="indexno">NIC</label><br>
@@ -93,11 +93,15 @@
                             <input type="radio" name="searchby" value="Name">
                             <label for="regno">Name</label><br>
                         </td>
-                    </tr>
+                    </tr> -->
 
                     <tr>
                         <td>
-                            <input type="text" name="searchtext" placeholder="enter text">
+                            NIC
+                            <input type="text" name="searchtext" placeholder="enter nic">
+                        </td>
+
+                        <td>
                             <input type="submit" name="search" value="search">   
                         </td>
                     </tr>
