@@ -63,7 +63,7 @@
   <script type="text/javascript">
     function togglePopup(){
       document.getElementById("popup-1").classList.toggle("active");
-      setTimeout(formsub, 3000);
+      setTimeout(formsub, 2000);
     }
     function formsub(){
       document.getElementById("myform").submit();
