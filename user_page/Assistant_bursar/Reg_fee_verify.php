@@ -8,14 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="../../css/top_navigation.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{background-color: white; padding: 10px 10px; border-radius: 10px ;}
+		table{background-color: white; padding: 10px 10px; border-radius: 10px ;margin-top: 50px;margin-bottom: 50px}
 		th, td {padding: 10px}
+		th{border-bottom: 1px solid grey;background-color: #f2f2f2;padding: 20px}
 		tr:hover {background-color: #f2f2f2;}
-		button:hover{background-color: grey}
-		#reject:hover{background-color: red}
+		button:hover{background-color: #00ace6}
+		#reject{background-color: #990000}
+		#verify{background-color: green}
 		input[type=submit]{margin-left: 30px}
 		body{font-family: 'Raleway', sans-serif;}
-		h1{background-color: #002b80;color: white;padding: 20px 20px;margin: 1% 18%;border-radius: 10px}
+		h2{background-color: #4B0082;color: white;padding: 20px 20px;margin: 1% 18%;border-radius: 10px}
 	</style>
 	<script src="../../js/showimage.js"></script>
 </head>
@@ -50,7 +52,7 @@
     </ul>
 
 	<div class="content">
-		<h1 align="center">Application fees verification</h1>
+		<h2 align="center">Application fees verification</h2>
 
 		<table align="center">
 		<?php
@@ -60,6 +62,7 @@
 				echo "<tr>
 						<th>NIC No</th>
 						<th>Type</th>
+						<th>Applied_Date</th>
 						<th>  </th>
 						<th>  </th>
 					  </tr>";
@@ -71,8 +74,9 @@
 					
 					
 					echo "<tr>
-							<td>".$row["NIC_No"]."</td>
+							<td style='font-family: Arial;'>".$row["NIC_No"]."</td>
 							<td>".$row["Type"]."</td>
+							<td>".$row["Applied_Date"]."</td>
 
 
 							<td>
@@ -89,7 +93,7 @@
 
 							<td>
 								<form action='./Assistant_bursar/Payslip_verify.php' method='post'>
-									<input type='submit' name='verify' value='Verify'>
+									<input type='submit' name='verify' value='Verify' id='verify'>
 									<input type='submit' name='reject' value='Reject' id='reject'>
 								</form>
 							</td>

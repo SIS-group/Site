@@ -1,6 +1,5 @@
 <?php 
 
-
 	if (isset($_POST['medsubmit'])) {
 
 		$active_user = $user;

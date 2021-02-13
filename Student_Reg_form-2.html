@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration-Step 2</title>
+</head>
+<style id="compiled-css" type="text/css">
+	.main{ border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;margin-top: 5%;margin-bottom: 5%;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+	.subtable{border-style: groove; border-radius:10px; padding: 5px 5px;border-width: 1px;background-color: #F8F8FF;width: 100%}
+	td{text-align: left; padding: 15px}
+	th{text-align: center}
+	body{font-family: 'Raleway', sans-serif;background-image: url('./icons/back.jpg');
+	background-repeat: no-repeat;background-attachment: fixed;background-position: center top;}
+	input[type=submit]{background-color:#4B0082 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; margin: 0% 40% ;}
+
+	input[type=submit]:hover{
+			background-color: green;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	input[type=text]{
+  			border: 1px solid grey;
+  			border-radius: 10px;
+  			padding: 7px 10px;
+  			box-sizing: border-box;
+  			text-align: left;
+  			align-self: center;
+  			float: center;
+  			width: 80%;
+		}
+</style>
+<script type="text/javascript" src="./js/dropzone.js"></script>
+<script type="text/javascript">
+	function _(el) {
+  return document.getElementById(el);
+}
+
+function uploadFile() {
+  var file = _("file1").files[0];
+  // alert(file.name+" | "+file.size+" | "+file.type);
+  var formdata = new FormData();
+  formdata.append("file1", file);
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener("progress", progressHandler, false);
+  ajax.addEventListener("load", completeHandler, false);
+  ajax.addEventListener("error", errorHandler, false);
+  ajax.addEventListener("abort", abortHandler, false);
+  ajax.open("POST", "file_upload_parser.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  //use file_upload_parser.php from above url
+  ajax.send(formdata);
+}
+
+function progressHandler(event) {
+  _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
+  var percent = (event.loaded / event.total) * 100;
+  _("progressBar").value = Math.round(percent);
+  _("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+}
+
+function completeHandler(event) {
+  _("status").innerHTML = event.target.responseText;
+  _("progressBar").value = 0; //wil clear progress bar after successful upload
+}
+
+function errorHandler(event) {
+  _("status").innerHTML = "Upload Failed";
+}
+
+function abortHandler(event) {
+  _("status").innerHTML = "Upload Aborted";
+}
+</script>
+<body>
+<form action="./user_page/Student/Registration/registration-2.php" method="post" enctype="multipart/form-data">
+	<table align="center" class="main">
+		<tr>
+			<td colspan="2" style="background-color: #4B0082;border-radius: 10px"><center>
+				<img src="./icons/logo.png" style="width:80px;height:80px;" >
+			</center></td>
+		</tr>
+		<tr>
+			<th colspan="2" style="color: #4B0082"><h1>Online Application Form - Step 2</h1></th>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table class="subtable">
+					<tr>
+						<td>NIC No: </td>
+						<td><input type="text" name="NIC" required maxlength="12"></td>
+					</tr>
+					<tr>
+						<td style="font-family: "><b>Application Fee (Rs. 1500.00)</b></td>
+					</tr>
+					<tr>
+						<td>Pay via:</td>
+						<td><input type="radio" name="payment" id="bank" value="bank" onclick="bankvisible()"><label for="bank" onclick="bankvisible()">Bank</label></td>
+						<td><input type="radio" name="payment" id="online" value="online" onclick="onlinevisible()"><label for="online" onclick="onlinevisible()">Online</label></td>
+					</tr>
+
+					<tr rowspan = "4" id="collapse_bank" style="visibility: collapse;">
+						<td colspan="3">
+							Account Name - <b>Cyber Campus, University of Colombo</b> <br>
+							Account Number - <b>12055602334 </b><br>
+							Bank - <b>People's Bank, Thibirigasyaya</b> <br><br>
+							Upload the softcopy of Bank slip 
+
+							<input type="file" name="reg_fee_slip" accept=".jpg, .png, .jpeg" id="file2" onchange="return fileValidation()" class="dropzone" style="border:1px dashed black;border-radius:10px;padding: 40px 40px" onchange="probarvisible()">
+							
+						</td> 
+					</tr>
+					<tr id="collapse_online" style="visibility: collapse;">
+						<td colspan="3"><center>
+							<button>
+								<a href="https://pay.cmb.ac.lk/" target="_blank" style="text-decoration: none;">
+								Processed with online payment
+								</a>
+							</button></center>
+						</td>
+					</tr>
+					<tr id="filebar" style="visibility: collapse;">
+						<td colspan="3">
+						<progress id="progressBar" value="0" max="100" style="width:300px"></progress>
+  						<h3 id="status"></h3>
+  						<p id="loaded_n_total"></p>
+  						</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="payment_form" value="Submit"></td>
+		</tr>
+	</table>
+
+<script type="text/javascript">
+	function bankvisible() {
+		document.getElementById('collapse_bank').style.visibility='visible';
+		document.getElementById('collapse_online').style.visibility='collapse';
+	};
+
+	function onlinevisible() {
+		document.getElementById('collapse_bank').style.visibility='collapse';
+		document.getElementById('collapse_online').style.visibility='visible';
+	};
+	function probarvisible(){
+		document.getElementById('filebar').style.visibility='visible';
+	};
+</script>
+</body>
+</html>

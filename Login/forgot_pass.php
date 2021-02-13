@@ -1,39 +1,33 @@
 <?php
+	include ("../config/dbcon.php");
 	if(isset($_POST['forgotpass'])){
+		$usertype = $_POST['usertype'];
 		$to = $_POST['email'];
     	$subject = "This is your temporary password";
-         
-    	$message = "<b>This is HTML message.</b>";
-    	$retval = mail ($to,$subject,$message);
-         
-        if( $retval == true ) {
-            echo "Message sent successfully...";
-        }else {
-            echo "Message could not be sent...";
-        }
+        
+        $str=rand(); 
+		$result = sha1($str); 
+		echo $result;
+
+    	$message = "This is your temporary password : $result";
+    	if(mail($to,$subject,$message)){
+    		if ($usertype=='Student') {
+    			$stmt1=$conn->prepare("UPDATE student SET password=? WHERE email=?");
+				$stmt1->bind_param('ss',$result,$to);
+				$stmt1->execute();
+				$stmt1->close();
+    		}
+    		else{
+    			$stmt2=$conn->prepare("UPDATE staff SET password=? WHERE email=?");
+				$stmt2->bind_param('ss',$result,$to);
+				$stmt2->execute();
+				$stmt2->close();
+    		}
+    		
+    	}
+      	header("location:../index.php");
+      	
+
 
 	}
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Recover password</title>
-	<link rel="stylesheet" type="text/css" href="../css/css.css">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-	<style type="text/css">
-		.forgotform{ padding: 20px 20px;border-radius: 10px; background-color: white; width: 30% ; margin-top: 10%}
-		input[type="text"]{width: 50%}
-		body{font-family: 'Raleway', sans-serif;background-image: url('../icons/back.jpg');}
-		.forgotform{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
-	</style>
-</head>
-<body><center>
-<div class="forgotform">
-	Enter email address<br><br>
-	<form action="" method="post">
-		<input type="text" name="email" placeholder="abc@mail.com"><br><br>
-		<input type="submit" name="forgotpass" value="submit">
-	</form>
-</div></center>
-</body>
-</html>

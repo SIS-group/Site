@@ -11,7 +11,7 @@
 		.subtable{border-style: groove; border-radius:10px; padding: 5px 5px;border-width: 1px;background-color: #F8F8FF;width: 100%}
 		td{text-align: left; padding: 15px}
 		th{text-align: center}
-		body{background-color: #99bbff;font-family: 'Raleway', sans-serif;background-image: url('./icons/back.jpg');
+		body{font-family: 'Raleway', sans-serif;background-image: url('./icons/back.jpg');
 		background-repeat: no-repeat;background-attachment: fixed;background-position: center top;}
 		input[type=text]{
   			border: 1px solid grey;
@@ -29,7 +29,7 @@
 		input[type=email]{
 			border-radius: 10px;padding: 5px 0px;width: 80%
 		}
-		input[type=submit]{background-color:#002b80 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; margin: 0% 40% ;}
+		input[type=submit]{background-color:#4B0082 ;color: white;border: none;padding: 10px 40px;text-align: center; border-radius: 10px ; }
 
 		input[type=submit]:hover{
 			background-color: green;
@@ -37,20 +37,20 @@
 		}
 
 	</style>
-
+	<script type="text/javascript" src="./js/dropzone.js"></script>
 	<script src="./js/image_validate.js"></script>
 </head>
 <body>
-<form action="./user_page/Student/Registration.php" method="post" enctype="multipart/form-data">
+<form action="./user_page/Student/Registration/registration-1.php" method="post" enctype="multipart/form-data" autocomplete="off">
 	<table align="center" class="main">
 		
 		<tr>
-			<td colspan="2" style="background-color: #002b80;border-radius: 10px"><center>
-				<img src="./icons/ccuc.png" style="width:250px;height:65px;" >
+			<td colspan="2" style="background-color: #4B0082;border-radius: 10px"><center>
+				<img src="./icons/logo.png" style="width:80px;height:80px;" >
 			</center></td>
 		</tr>
 		<tr>
-			<th colspan="2" style="color: #002b80"><h1>Online Application Form - Part 1</h1></th>
+			<th colspan="2" style="color: #4B0082"><h1>Online Application Form - Step 1</h1></th>
 		</tr>
 		<tr>
 			<td>Name with initials</td>
@@ -66,7 +66,7 @@
 		</tr>
 		<tr>
 			<td>NIC No.</td>
-			<td><input type="text" name="NIC" required></td>
+			<td><input type="text" name="NIC" required maxlength="12"></td>
 		</tr>
 		<tr>
 			<td>Address</td>
@@ -78,7 +78,19 @@
 		<tr>
 		<tr>
 			<td>Province </td>
-			<td><input type="text" name="Province" required></td>
+			<td>
+			<select name="Province" style="border-radius: 10px;padding: 5px 5px">
+				<option value="Western">Western</option>
+				<option value="Northern">Northern</option>
+				<option value="North Central">North Central</option>
+				<option value="Eastern">Eastern</option>
+				<option value="Central">Central</option>
+				<option value="Sabaragamuwa">Sabaragamuwa</option>
+				<option value="Uva">Uva</option>
+				<option value="Southern">Southern</option>
+				<option value="North Western">North Western</option>
+			</select>
+			</td>
 		</tr>
 		<tr>
 			<td>Divisional Secretariat</td>
@@ -96,7 +108,7 @@
 		</tr>
 		<tr>
 			<td>Landline No.</td>
-			<td><input type="text" name="Landline" placeholder="011XXXXXXX"></td>
+			<td><input type="text" name="Landline" placeholder="011XXXXXXX" maxlength="10"></td>
 		</tr>
 		<tr>
 			<td>Mobile No.</td>
@@ -116,7 +128,7 @@
 							</i>
 						</td>
 						<td >
-							<input type="file" name="stu_photo" id="file" required onchange="return fileValidation()" accept=".jpg, .png, .jpeg">
+							<input type="file" name="stu_photo" id="file" required onchange="return fileValidation()" accept=".jpg, .png, .jpeg" class="dropzone" style="border:1px dashed black;border-radius:10px;padding: 40px 40px">
 						</td>
 					</tr>
 				</table>
@@ -144,45 +156,23 @@
 		</tr>
 
 		<tr>
-			<td colspan="2">
-				<table class="subtable">
-					<tr>
-						<td>Application Fee (Rs. 1500.00)</td>
-					</tr>
-					<tr>
-						<td>Pay via:</td>
-						<td><input type="radio" name="payment" id="bank" value="bank"><label for="bank">Bank</label></td>
-						<td><input type="radio" name="payment" id="online" value="online"><label for="online">Online</label></td>
-					</tr>
-
-					<tr rowspan = "4" id="collapse_bank">
-						<td colspan="3">
-							Account Name - <b>Cyber Campus, University of Colombo</b> <br>
-							Account Number - <b>12055602334 </b><br>
-							Bank - <b>People's Bank, Thibirigasyaya</b> <br><br>
-							Upload the softcopy of Bank slip 
-							<input type="file" name="reg_fee_slip" accept=".jpg, .png, .jpeg" id="file2" required onchange="return fileValidation()">
-						</td> 
-					</tr>
-					<tr id="collapse_online">
-						<td colspan="3"><center>
-							<button>
-								<a href="https://pay.cmb.ac.lk/" target="_blank" style="text-decoration: none;">
-								Processed with online payment
-								</a>
-							</button></center>
-						</td>
-					</tr>
-				</table>
-
-			</td>
-		</tr>
-
-		<tr>
-			<td colspan="2" align="center"><input type="submit" name="regform" value="Submit"></td>
+			<td colspan="2" align="center"><center><input type="submit" name="regform" value="Submit & Processed to Payment"></center></td>
 		</tr>
 	</table>
 </form>
+
+<script type="text/javascript">
+	function bankvisible() {
+		document.getElementById('collapse_bank').style.visibility='visible';
+		document.getElementById('collapse_online').style.visibility='collapse';
+	};
+
+	function onlinevisible() {
+		document.getElementById('collapse_bank').style.visibility='collapse';
+		document.getElementById('collapse_online').style.visibility='visible';
+	};
+
+</script>
 
 </body>
 </html>

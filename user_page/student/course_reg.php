@@ -9,7 +9,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
     	table{background-color: white; padding: 10px 10px; border-radius: 10px ;margin-bottom: 5%;width: 80%}
-    	th, td {padding: 10px;border-bottom: 1px solid #ddd;}
+    	td {padding: 10px;border-bottom: 1px solid #ddd;}
+    	th{background-color: #4B0082}
     	body{font-family: 'Raleway', sans-serif;}
     	#course tr:hover {background-color: #f2f2f2;}
   	</style>
@@ -53,8 +54,8 @@
 				<td style="border-bottom: unset;">
 					<b>Minimum Credits left to register</b>
 				</td>
-				<td style="background-color: #002b80;color: white;border-radius: 10px" align="center">
-					6
+				<td style="background-color: orange;color: black;border-radius: 10px" align="center">
+					<b>6</b>
 				</td>
 			</tr>
 		</table>

@@ -37,7 +37,7 @@
   		.insert table{
   			border-radius: 10px;
   			box-shadow:unset;
-  			margin-left: 20%;
+  			
   			margin-top: 20px;
   			border: 1px solid #656565;
   			padding: 20px 20px;
@@ -53,6 +53,9 @@
 			border-radius: 25px;
 		}
 		tr:hover {background-color: #f5f5f5;}
+		#sub:hover {background-color: unset;}
+		#subdata{border-bottom: unset;}
+		h2{background-color: #002b80;color: white;border-radius: 10px ;padding: 20px 20px;width: 50%}
 	</style>
 </head>
 <body>
@@ -64,6 +67,7 @@
   		<a href=" ./manage_accounts.php ">Manage User Accounts</a>
   		<a class="active" href=" ">Program Managment</a>
   		<a href="./course_manage.php">Course Managment</a>
+  		<a href="./broadcast.php">Broardcast Notifications</a>
   		<a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
 	</div>
 
@@ -79,9 +83,11 @@
   	</ul>
 
 	<div class="content">
-		<div class="insert">
-			<br><label><b>Insert New Programs</b></label><br>
-			<table >
+
+		<div class="insert" >
+			<center><h2 align="center">Insert New Programs</h2></center> 
+			
+			<table align="center">
 				<form>
 					<tr>
 						<td>Program ID</td>
@@ -95,19 +101,19 @@
 						<td>Program Coordrinator ID</td>
 						<td><input type="text" name=""></td>
 					</tr>
-					<tr>
-						<td colspan="2"><input type="submit" name="" value="Submit"></td>
+					<tr id="sub">
+						<td colspan="2" id="subdata"><input type="submit" name="" value="Submit" ></td>
 					</tr>
 
 				</form>
-			</table>
-			
+			</table>	
 		</div>
 		
 		<div class="edit">
-			<br><label><b>Edit Current Programs</b></label><br>
+			
+			<center><h2 align="center">Edit Current Programs</h2></center>
 			<table align="center">
-				<tr>
+				<tr style="background-color: grey">
 					<th>Program ID</th>
 					<th>Name</th>
 					<th>Program Coordinator</th>

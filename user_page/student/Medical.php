@@ -1,7 +1,4 @@
-<?php 
-	include ('./config/insert_medical.php');
-
-?>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +14,7 @@
 		td{padding: 10px 10px}
 		input[type="date"]{border-radius: 10px; text-align: center;width: 60%}
 		body{font-family: 'Raleway', sans-serif;}
-		th{background-color: #002b80;color: white;border-radius: 10px}
+		th{background-color: #4B0082;color: white;border-radius: 10px}
 
 
 	</style>
@@ -37,7 +34,10 @@
 
 	</div>
 
-	<?php include("./config/get_name.php") ?>
+	<?php 
+	include("./config/get_name.php"); 
+	include ('./config/insert_medical.php');
+	?>
 
 	<ul> 
 		<li style="margin-right: 275px" class="dropdown">
@@ -65,9 +65,11 @@
 			<table align="center">
 				<tr><th><h2 align="center">Medical Submission</h2></th></tr>
 				<tr><td><b>Enter Date</b> </td></tr>
-				<tr><td><input type="date" name="Med_date"></td></tr>
+				<tr><td><input type="date" name="Med_date" required></td></tr>
 				<tr><td><b>Upload the file</b></td></tr>
-				<tr><td><input type="file" id="medfile" name="medfile" style="border:1px dashed black;border-radius:10px;padding: 30px 30px "></td>
+				<tr><td>
+						<input type="file" id="medfile" name="medfile" style="border:1px dashed black;border-radius:10px;padding: 30px 30px " required>
+					</td>
 				</tr>
 				<tr><td><input type="submit" name="medsubmit" value="Submit"></td></tr>
 			</table>

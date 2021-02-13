@@ -1,7 +1,7 @@
 <?php 
 	
-	include("../config/dbcon.php");
-	include ("../config/session.php");
+	include("../../config/dbcon.php");
+	include ("../../config/session.php");
 
 	$active_user = $user;
 	

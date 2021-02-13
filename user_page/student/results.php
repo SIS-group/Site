@@ -10,7 +10,7 @@
  	<style type="text/css">
     	table{background-color: white; padding: 10px 10px; border-radius: 10px ;margin-bottom: 5%;width: 50%}
     	th, td {padding: 15px;border-bottom: 1px solid #ddd;}
-    	th{background-color: #002b80;border-radius: 10px;color: white}
+    	th{background-color: #4B0082;border-radius: 10px;color: white}
     	tr:hover {background-color: #f2f2f2;}
     	body{font-family: 'Raleway', sans-serif;}
  	</style>

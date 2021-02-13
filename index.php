@@ -8,8 +8,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="./css/css.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;width: 400px ; margin-top:1%;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		table{border-radius:30px; padding: 2% 2%; background-color: white;vertical-align: center;width: 400px ; margin-top:1%;box-shadow: unset;	
 		}
 		td{text-align: center; padding: 4px}
 
@@ -35,21 +34,50 @@ session_start();
 
 		}
 		body{font-family: 'Raleway', sans-serif;background-image: url('./icons/back.jpg');}
+		#login{font-size: large;}
 
-		
+		.grid-container {
+  			display: grid;
+  			grid-template-columns: auto auto;
+  			grid-gap: 0px;
+  			margin-top: 50px;
+  			margin-left: 15%;
+  			margin-right: 15%;
+  			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  			border-radius: 20px;
+  			background-color: white;
+		}
+
+		.grid-container > div {
+  			padding: 20px 20px;
+  			
+		}
+
+		.item1 {
+  			grid-column: 1 / 2;
+  			width: 93%;
+  			background-color: #4B0082;
+  			color: white;
+		}	
 	</style>
 
 </head>
 <body >
+<div class="grid-container">
+
+	<div class="item1">
+		
+		<center><img src="./icons/logo.png" style="width:300px;height:300px;margin-top: 50px" ></center>
+		<h3 align="center" style="margin-top: 100px">Student Information System of Cyber Campus , University of Colombo</h1>
+
+	</div>
+
+	<div class="item2">
 	<table align="center" width="20%" >
 	<form action="./login/login.php" method="post" >
+			
 			<tr>
-				<td colspan="2" >
-					<img src="./icons/logo.png" style="width:80px;height:80px;" >
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="color: #002b80" id='login'><h1>LOGIN</h1></td>
+				<td colspan="2" style="color: #4B0082" id='login'><h1>LOGIN</h1></td>
 			</tr>
 			<tr>
 				<td >
@@ -87,9 +115,8 @@ session_start();
 			</tr>
 			<tr>
 				<td>
-						<input type="checkbox" name="passrem">
-					
-						<i>remember me</i>
+						<input type="checkbox" name="passrem" id="passrem">
+						<label for="passrem" style="background-color: unset;padding: unset;border-style: unset;"><i>remember me</i></label>
 				</td>
 			</tr>
 			<tr>
@@ -97,7 +124,7 @@ session_start();
 			</tr>
 	</form>
 	<tr>
-		<td style="border-bottom: 1px solid #ddd;"><a href="./Login/forgot_pass.php"><i>forgot password ?</i></a></td>
+		<td style="border-bottom: 1px solid #ddd;"><a href="./forgot_pass.html"><i>forgot password ?</i></a></td>
 	</tr>
 	<tr>
 		<td>
@@ -106,11 +133,13 @@ session_start();
 	</tr>
 	<tr >
 		<td colspan="2" ><a href="./Student_Reg_form.html" target="_self">
-			<button style="width: 50%">Apply</button></a><br>
+			<button style="width: 50%;background-color: #00994d">Apply</button></a><br>
 		</td>
 	</tr>
 	
 	</table>
+	</div>
+</div>
 </body>
 </html>
 

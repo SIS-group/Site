@@ -9,11 +9,14 @@
 	<style type="text/css">
 
   body{font-family: 'Raleway', sans-serif;}
+  #grid2{font-size: 15px;text-align: left;padding: 20px 20px}
   .site_visit {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     margin: 10px 20px;
     border-radius: 10px;
     background-color: white;
+    width: 50%;
+    height: 50%;
   }
   .site_visit img{
     padding: 20px 140px;
@@ -49,6 +52,7 @@
   		<a href="./Admin/manage_accounts.php ">Manage User Accounts</a>
   		<a href="./Admin/prog_manage.php">Program Managment</a>
   		<a href="./Admin/course_manage.php">Course Managment</a>
+      <a href="./Admin/broadcast.php">Broardcast Notifications</a>
   		<a href="../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
 	</div>
 
@@ -66,15 +70,23 @@
 	<div class="content">
     <div class="site_visit">
       <br><label>Site Visits this week</label><br>
-      <img src="../icons/site.png">
+
+      <canvas id="myChart" style="height: 100px;"></canvas>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      <script src="../js/chart.js"></script>
+
     </div>
     <div class="grid-container">
       <div>
         <font size="3px"> Active users </font>
         <br> 47
       </div>
-      <div>
-          Recently Log on users
+      <div id="grid2">
+          <font size="5px">Recently Logged in users</font><br>
+          K. T. Dharshana<br>
+          K. A. N. Dhaneja<br>
+          D. M. D. Jayasinghe<br>
+          R.M. Jayaru
       </div>
  
       

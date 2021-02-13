@@ -36,8 +36,8 @@
 			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
 		</center>
 		<a href="../staff_assistant.php">Print Documents</a>
-		<a href="./enter_index.php ">Enter index numbers</a>
-  		<a class="active" href=" ">Account setting</a>
+		<a href="./enter_index.php">Registration & Index numbers </a>
+  		<a class="active" href="./enter_index.php ">Account setting</a>
   		<a href="../../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
 
 	</div>
@@ -66,12 +66,13 @@
 			<table align="center">
 				<tr>
 					<th colspan="2">
-						<h1 align="center">Account Setting</h1>
+						<h2 align="center">Account Setting</h2>
 					</th>
 				</tr>
+
 				<tr>
-					<td>Profile picture</td>
-					<td><input type="file" name="profile_pic"></td>
+					<td><br>Profile picture</td>
+					<td><br><input type="file" name="profile_pic"></td>
 				</tr>
 				<tr>
 					<td>Current Password</td>

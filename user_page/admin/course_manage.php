@@ -30,6 +30,8 @@
   		#selection{
   			margin: 10px 20px;
   		}
+  		#Insert{background-color: #002b80;color: white;border-radius: 10px ;padding: 20px 20px;width: 80%}
+  		#Edit{background-color: #002b80;color: white;border-radius: 10px ;padding: 20px 20px;}
 	</style>
 </head>
 <body>
@@ -41,6 +43,7 @@
   		<a href=" ./manage_accounts.php ">Manage User Accounts</a>
   		<a href="./prog_manage.php">Program Managment</a>
   		<a class="active" href=" ">Course Managment</a>
+  		<a href="./broadcast.php">Broardcast Notifications</a>
   		<a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
 	</div>
 
@@ -66,9 +69,10 @@
 			</select>
 			<br><br>
 			<table style="margin-left: 50px">
+
 				<form>
 					<tr>
-						<th colspan="2">Insert Course</th>
+						<th colspan="2" id="Insert">Insert New Course</th>
 					</tr>
 					<tr>
 						<td>Enter Course ID</td>
@@ -103,6 +107,9 @@
 			</table><br>
 
 			<table align="center">
+				<tr>
+					<th colspan="7" id="Edit">Edit Courses</th>
+				</tr>
 				<tr>
 					<th>Course ID</th>
 					<th>Course Name</th>

@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/sidepanel.css">
 	<link rel="stylesheet" type="text/css" href="../../css/top_navigation.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../css/dropzone.min.css">
 	<style type="text/css">
 		table{
 			padding: 30px 30px;
@@ -16,13 +17,14 @@
 			width: 50%;
 
 		}
-		td{padding: 10px 10px}
+		td{padding: 5px 10px}
 		input[type="date"]{border-radius: 10px; text-align: center;width: 90%}
 		input[type="text"]{width: 60%}
 		body{font-family: 'Raleway', sans-serif;}
-		th{background-color: #002b80;color: white;border-radius: 10px}
+		th{background-color: #800080;color: white;border-radius: 10px}
 
 	</style>
+	<script type="text/javascript" src="../../js/dropzone.js"></script>
 </head>
 <body>
 	<div class="sidebar">
@@ -39,7 +41,6 @@
 
 	<?php 
 		include("./config/get_name.php");
-		include ('./config/insert_payment.php');
 	?>
 	<ul>
       	<li style="margin-right: 275px" class="dropdown">
@@ -60,27 +61,29 @@
     </ul>
 		
 	<div class="content">
-		
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action="./config/insert_payment.php" method="post" enctype="multipart/form-data" >
 		<table align="center">
 			<tr>
 				<th colspan="2"><h2>Enter payment details</h2></th>
 			</tr>
 			<tr >
 				<td><b>Payment Date</b></td>
-				<td><input type="date" name="payment_date"></td>
+				<td><input type="date" name="payment_date" required></td>
 			</tr>
 			<tr>
 				<td colspan="2"><b>Bank Branch</b></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="text" name="bank_branch"></td>
+				<td colspan="2"><input type="text" name="bank_branch" required></td>
 			</tr>
 			<tr>
 				<td colspan="2" ><b>Upload soft copy of payment slip</b></td>
 			</tr>
 			<tr>
-				<td colspan="2" style="border:1px dashed black;border-radius:10px;padding: 30px 30px "><input type="file" name="payfile"></td>
+				<td colspan="2"  >
+					<input type="file" name="payfile" required class="dropzone" id="my-awesome-dropzone" 
+					style="border:1px dashed black;border-radius:10px;">
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" name="paysubmit" value="Submit"></td>

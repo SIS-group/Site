@@ -11,11 +11,18 @@
 		table{background-color: white; padding: 10px 10px; border-radius: 10px ;}
 		th, td {padding: 10px}
 		tr:hover {background-color: #f2f2f2;border-bottom: 1px solid #ddd;}
-		button:hover{background-color: grey}
+		button:hover{background-color: green}
 		#reject:hover{background-color: red}
 		input[type=submit]{margin-left: 30px}
 		body{font-family: 'Raleway', sans-serif;}
-		h1{background-color: #002b80;color: white;padding: 20px 20px;margin: 1% 14%;border-radius: 10px}
+		h2{background-color: #002b80;color: white;padding: 20px 20px;margin: 1% 14%;border-radius: 10px}
+		#print{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			margin: 50px 300px;
+			background-color: white;
+			border-radius: 10px;
+			padding: 20px 50px
+		}
 	</style>
 	<script src="../js/showimage.js"></script>
 </head>
@@ -26,7 +33,7 @@
 			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
 		</center>
 		<a class="active" href="./ .php">Print Documents</a>
-		<a href=" ./Staff_assistant/enter_index.php">Enter index numbers</a>
+		<a href="./Staff_assistant/enter_index.php">Registration & Index numbers </a>
   		<a href="./Staff_assistant/account_setting.php">Account setting</a>
   		<a href="../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
 
@@ -52,8 +59,20 @@
 
 	<div class="content">
 
+		<div id="print"><center>
+			<h2>Print Documents</h2>
+			Select document type<br><br>
+			<select name="doc_type" style="padding: 10px 10px;border-radius: 25px">
+				<option>Program list</option>
+				<option>Course list</option>
+				<option>Student list</option>
+			</select><br><br>
+			<button onclick="window.print()">Print this page</button>
+		</center></div>
+		
 		
 	</div>
+
 </body>
 </html>
 

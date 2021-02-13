@@ -8,14 +8,17 @@
 	<link rel="stylesheet" type="text/css" href="../css/top_navigation.css">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<style type="text/css">
-		table{background-color: white; padding: 10px 10px; border-radius: 10px ;}
-		th, td {padding: 10px}
+		table{background-color: white; padding: 10px 10px; border-radius: 10px ;margin-top: 50px;margin-bottom: 50px}
+		td{padding:  10px}
+		th{background-color: #f2f2f2;border-bottom: 1px solid grey;padding: 20px}
 		tr:hover {background-color: #f2f2f2;border-bottom: 1px solid #ddd;}
-		button:hover{background-color: grey}
-		#reject:hover{background-color: red}
+		button{background-color: }
+		button:hover{background-color: #00ace6}
+		#reject{background-color: #990000}
+		#verify{background-color: green}
 		input[type=submit]{margin-left: 30px}
 		body{font-family: 'Raleway', sans-serif;}
-		h1{background-color: #002b80;color: white;padding: 20px 20px;margin: 1% 14%;border-radius: 10px}
+		h2{background-color: #4B0082;color: white;padding: 20px 20px;margin: 1% 14%;border-radius: 10px}
 	</style>
 	<script src="../js/showimage.js"></script>
 </head>
@@ -52,7 +55,7 @@
 
 	<div class="content">
 
-		<h1 align="center">Annual Fees Verification</h1>
+		<h2 align="center">Annual Fees Verification</h2>
 
 		<table align="center">
 		<?php
@@ -63,6 +66,7 @@
 					<th>RegNo</th>
 					<th>Branch</th>
 					<th>PayDate</th>
+					<th>Uplaoded time</th>
 					<th>  </th>
 					<th>  </th>
 					</tr>";
@@ -74,14 +78,16 @@
 					
 					
 					echo "<tr>
-							<td>".$row["RegNo"]."</td>
+							<td style='font-family: Arial;'>".$row["RegNo"]."</td>
 							<td>".$row["Branch"]."</td>
 							<td>".$row["PayDate"]."</td>
+							<td style='font-family: Arial;'>".$row["Uploaded_time"]."</td>
+							
 							<td>
 
 							<div id='myModal' class='modal'>
-  							<span class='close'>&times;</span>
-  							<img class='modal-content' id='img01'>
+  								<span class='close'>	&times;	</span>
+  								<img class='modal-content' id='img01'>
 							</div>
 
 							<img src='student/Payslips/$img_name' id=$num style='display:none;width:100%;max-width:100px'>
@@ -90,9 +96,10 @@
 							</td>
 
 							<td>
+
 							<form action='./Assistant_bursar/Payslip_verify.php' method='post'>
-							<input type='submit' name='verify' value='Verify'>
-							<input type='submit' name='reject' value='Reject' id='reject'>
+								<input type='submit' name='verify' value='Verify' id='verify'>
+								<input type='submit' name='reject' value='Reject' id='reject'>
 							</form>
 							</td>
 						  </tr>";

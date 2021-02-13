@@ -23,6 +23,7 @@
   		<a class="active" href=" ./manage_accounts.php ">Manage User Accounts</a>
   		<a href="./prog_manage.php">Program Managment</a>
   		<a href="./course_manage.php">Course Managment</a>
+  		<a href="./broadcast.php">Broardcast Notifications</a>
   		<a href="../../login/logout.php" style="all:unset ;"><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
 	</div>
 
