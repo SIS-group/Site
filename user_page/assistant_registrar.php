@@ -23,7 +23,7 @@
 		table{ border-radius: 10px ;background-color: white; padding: 4% 4%;}
 		td{ padding: 10px 10px }
 		input[type="submit"]:hover{background-color: green}
-		th{background-color: #002b80;color: white;border-radius: 10px ;}
+		th{background-color: #4B0082;color: white;border-radius: 10px ;}
 		.sidebar a 
 		{
 			padding: 15%;    

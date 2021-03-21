@@ -19,7 +19,7 @@
 
         table{ border-radius: 10px ;background-color: white; padding: 4% 4%;}
 		td{ padding: 10px 10px }
-        th{background-color: #002b80;color: white;border-radius: 10px ;}
+        th{background-color: #4B0082;color: white;border-radius: 10px ;}
 		input[type=submit]:hover{background-color: green; border-radius: 5px}
         body{font-family: 'Raleway', sans-serif;margin: 0;}
 		.sidebar a 
@@ -41,6 +41,7 @@
 			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
 		</center>
         <a class="active" href=" ">Interviews</a>
+        <a href=" interview_committee_member/callforinterviews.php">Call for interviews</a>
   		<!-- <a href="interview_committee_member/notifications.php">Notifications</a> -->
   		<a href=" interview_committee_member/account_settings.php">Account settings</a>
   		<a href="../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>

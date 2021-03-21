@@ -16,7 +16,7 @@
                 font-family: 'Raleway', sans-serif;
                 margin: 0;
             }
-            button
+            .button1
             {
                 margin-top: 5%;
                 background-color:#002b80 ;
@@ -31,7 +31,7 @@
             td{ padding: 10px 10px }
             body{font-family: 'Raleway', sans-serif;margin: 0;}
             input[type="submit"]:hover{background-color: green}
-            th{background-color: #002b80;color: white;border-radius: 10px ;}
+            th{background-color: #4B0082;color: white;border-radius: 10px ;}
             .sidebar a 
             {
                 padding: 15%;
@@ -92,7 +92,7 @@
         </ul>
 
         <div class="content" align="center">
-            <form name="payments" method="post" action="paymentdetails.php">
+            <form name="payments" method="post" action="./config/paymentdetails.php">
                 <table>
                     <tr>
                         <th colspan="2">

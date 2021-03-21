@@ -14,7 +14,7 @@
         <style type="text/css">
         table{ border-radius: 10px ;background-color: white; padding: 4% 4%;}
 		td{ padding: 10px 10px }
-        th{background-color: #002b80;color: white;border-radius: 10px ;}
+        th{background-color: #4B0082;color: white;border-radius: 10px ;}
 		input[type=submit]:hover{background-color: green; border-radius: 5px}
 		.sidebar a 
         {
@@ -32,6 +32,7 @@
             </center>
             <a href="../interview_committee_member.php">Interviews</a>
   		    <!-- <a href="notifications.php">Notifications</a> -->
+            <a href=" callforinterviews.php">Call for interviews</a>
             <a class="active" href=" account_settings.php">Account settings</a>
             <a href="../../Login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
         </div>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conn=mysqli_connect("localhost","root","","sis");
+    $conn=new mysqli("localhost","root","","sis");
 
     if ( isset($_POST["search"]) )
     {
@@ -10,8 +10,12 @@
         //$search = mysqli_real_escape_string($conn,$_POST['searchby']);
 
         $sql1 = " SELECT * FROM student WHERE NIC='$text' AND Program='$program' ";
+        $stmt1 = $conn->prepare($sql1);
+        $stmt1->execute();
+        $result1 = $stmt1->get_result();
+        $stmt1->close();
 
-        $result1 = mysqli_query($conn,$sql1);
+        //$result1 = mysqli_query($conn,$sql1);
 
         if (!$result1) {
             printf("Error: %s\n", mysqli_error($conn));
@@ -55,7 +59,7 @@
                     }
                     th
                     {
-                        background-color: #002b80;
+                        background-color: #4B0082;
                         color: white;
                         border-radius: 10px ;
                     }
@@ -73,8 +77,9 @@
                     <center><img src="../../icons/logo.png" style="width:80px;height:80px;" >
                         <div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
                     </center>
-                    <a href="../interview_committee_member.php">Interviews</a>
+                    <a class="active" href="../interview_committee_member.php">Interviews</a>
                     <!-- <a href="notifications.php">Notifications</a> -->
+                    <a href=" callforinterviews.php">Call for interviews</a>
                     <a href=" account_settings.php">Account settings</a>
                     <a href="../../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
                 </div>
@@ -107,13 +112,13 @@
         <?php
         }
 
-        if (mysqli_num_rows($result1) > 0) 
+        if (mysqli_num_rows($result1) == 1) 
         {
             $num =0;
-            while($row = mysqli_fetch_assoc($result1)) 
+            while($row = $result1->fetch_assoc()) 
             {
                 $num++;
-                if ( $row["RegNo"]==NULL && $row["IndexNo"]==NULL)
+                if ( $row["Account_status"]=="Pending")
                 {
             ?>
                         
@@ -242,7 +247,7 @@
                     
                 <?php
                 }
-                else
+                else if ($row["Account_status"]=="Active")
                 {?>
 
                 <div class="content" align="center">

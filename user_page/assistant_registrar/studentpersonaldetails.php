@@ -21,7 +21,7 @@
                 border-radius: 10px;
                 padding: 7px 20px;
             }
-            th{background-color: #002b80;color: white;border-radius: 10px ;}
+            th{background-color: #4B0082;color: white;border-radius: 10px ;}
             .sidebar a {
                 padding: 15%;
             }
@@ -60,7 +60,7 @@
 
         <div class="content" align="center">
             <!-- <p style="font-size: 160%;" >Search by the student's: </p> -->
-            <form name="studentpersonaldata" method="POST" action="./personaldetails.php">
+            <form name="studentpersonaldata" method="POST" action="./config/personaldetails.php">
                 <table>
                     <tr>
                         <th colspan="2">
@@ -90,12 +90,12 @@
                         </td>
                     </tr>
 
-                    <!-- <tr>
+                    <tr>
                         <td>
-                            <input type="radio" name="searchby" value="Name">
-                            <label for="name">Name</label><br>
+                            <input type="radio" name="searchby" value="NIC">
+                            <label for="name">NIC</label><br>
                         </td>
-                    </tr> -->
+                    </tr>
 
                     <tr>
                         <td>

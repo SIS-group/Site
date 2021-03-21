@@ -35,7 +35,7 @@
             }
             th
             {
-                background-color: #002b80;
+                background-color: #4B0082;
                 color: white;
                 border-radius: 10px ;
             }
