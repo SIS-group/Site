@@ -119,7 +119,7 @@
          		
          	}
          	elseif ($role=="Interview committee member") {
-         		header("location: ../user_page/ ");
+         		header("location: ../user_page/interview_committee_member.php ");
          		
          	}
          	elseif ($role=="Staff assistant") {
@@ -127,7 +127,7 @@
          		
          	}
          	elseif ($role=="Assistant registrar") {
-         		header("location:../user_page/ ");
+         		header("location:../user_page/assistant_registrar.php ");
          		
          	}
          	else{
