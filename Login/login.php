@@ -130,9 +130,7 @@
          		header("location:../user_page/assistant_registrar.php ");
          		
          	}
-         	else{
-         		echo "mkddaoi";
-         	}
+         	
 
          	$sql5 = "INSERT INTO userlog(Username,Login_time) VALUES (?,now()) ";
 			
