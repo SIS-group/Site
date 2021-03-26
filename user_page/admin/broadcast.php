@@ -15,7 +15,7 @@
       border-radius: 10px;
       padding: 20px 20px
     }
-    h2{background-color: #002b80;color: white;border-radius: 10px ;padding: 20px 20px;width: 50%}
+    h2{background-color: #4B0082;color: white;border-radius: 10px ;padding: 20px 20px;width: 50%}
     textarea{border-radius: 10px}
   </style>
 </head>
@@ -29,7 +29,8 @@
       <a href=" ./prog_manage.php">Program Managment</a>
       <a href="./course_manage.php">Course Managment</a>
       <a class="active" href="./broadcast.php">Broardcast Notifications</a>
-      <a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
+      <a href="./manage_deadlines.php">Manage Deadlines</a>
+      <a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 20%;margin-left: 20%" id="logout">Log out</button></a>
   </div>
 
   <ul> 
@@ -46,15 +47,58 @@
   <div class="content">
     
     <div id="broadcast" align="center">
-      <h2 align="center">Broadcast Notifications</h2>
-      Type the Message here <br><br> <textarea rows="5" cols="50"></textarea><br><br>
-      Target Audience
-      <input type="checkbox" name="Student">Student
-      <input type="checkbox" name="Staff">Staff
-      <br><br><button>Send</button>
+      <form method="post" action="" id="myform">
+        <h2 align="center">Broadcast Notifications</h2>
+        Type the Message here <br><br> 
+        <textarea rows="5" cols="50" name="Message" required></textarea><br><br>
+        Target Audience
+        <input type="checkbox" name="Student" id="Student" ><label for="Student">Student</label>
+        <input type="checkbox" name="Staff" id="Staff" ><label for="Staff">Staff</label> <br><br>
+        <button id="but_upload">Broadcast</button>
+      </form>
     </div>
 
   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script >
 
+$(document).ready(function(){
+
+    $("#but_upload").click(function(event){
+      event.preventDefault();
+      var form = $('#myform')[0];
+      var fd = new FormData(form);
+
+    $("#but_upload").prop("disabled", true);
+    swal({
+        title: "Confirm?",
+        text: "Course will be inserted permanently",
+        icon: 'warning',
+        buttons: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        $.ajax({
+                 url: './config/send_broadcast.php',
+                 type: 'POST',
+                 enctype: 'multipart/form-data',
+                 data:fd, 
+                 contentType: false,
+                 processData: false,
+                 cache: false,
+
+               
+              }),
+              location.reload()
+      }
+      else{
+        location.reload()
+      }
+    });
+        
+    });
+});
+</script>
 </body>
 </html>

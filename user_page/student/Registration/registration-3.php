@@ -66,6 +66,6 @@
 	/*$sql6 = "INSERT INTO student_emergency_contact(NIC_No,Contact_Name,Relationship,ContactNo) VALUES('$NIC','$Name1','$Relation1','$contact1'),('$NIC','$Name2','$Relation2','$contact2')";
 		mysqli_query($conn,$sql6);*/
 
-	header("location:../../../index.php");
+	header("location:Pre_interview.html");
 	$conn->close();
 ?>

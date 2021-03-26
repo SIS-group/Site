@@ -15,7 +15,7 @@
                 return false; 
             }
 
-             var fileInput2 =  
+            var fileInput2 =  
                 document.getElementById('file2'); 
               
             var filePath2 = fileInput2.value; 

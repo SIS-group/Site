@@ -7,7 +7,7 @@
         
         $str=rand(); 
 		$result = sha1($str); 
-		echo $result;
+		//echo $result;
 
     	$message = "This is your temporary password : $result";
     	if(mail($to,$subject,$message)){

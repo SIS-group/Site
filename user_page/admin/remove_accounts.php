@@ -11,7 +11,7 @@
 		td{padding: 10px 5px; text-align: center;}
 		input[type=submit]:hover{background-color: red}
 		body{font-family: 'Raleway', sans-serif;}
-		th{background-color: #002b80;color: white;border-radius: 10px ;}
+		th{background-color: #4B0082;color: white;border-radius: 10px ;}
 	</style>
 </head>
 <body>
@@ -24,7 +24,8 @@
   		<a href="./prog_manage.php">Program Managment</a>
   		<a href="./course_manage.php">Course Managment</a>
   		<a href="./broadcast.php">Broardcast Notifications</a>
-  		<a href="../../login/logout.php" style="all:unset ;"><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
+  		<a href="./manage_deadlines.php">Manage Deadlines</a>
+  		<a href="../../login/logout.php" style="all:unset ;"><button style="margin-top: 20%;margin-left: 20%" id="logout">Log out</button></a>
 	</div>
 
 	<ul> 
@@ -40,7 +41,7 @@
 	
 	<div class="content" align="center">
 
-		<form action="./config/remove_acc.php" method="post">
+		<form action=" " method="post" id="myform">
 			<table align="center">
 				<tr>
 					<th colspan="2">
@@ -48,20 +49,76 @@
 					</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="user_type" value="Staff">Staff</td>
-					<td><input type="radio" name="user_type" value="Student">Student</td>
+					<td>
+						<input type="radio" name="user_type" value="Staff" id="Staff">
+						<label for="Staff">Staff</label>
+					</td>
+					<td>
+						<input type="radio" name="user_type" value="Student" id="Student">
+						<label for="Student">Student</label>
+					</td>
 				</tr>
 				<tr>
 					<td>Enter Username</td>
-					<td><input type="text" name="Username"></td>
+					<td><input type="text" name="Username" required></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" name="Remove_account" value="Remove User Account"></td>
+				<td style="color: red" colspan="2"><i>
+					<?php
+                    	if(isset($_SESSION["error"])){
+                        	$error = $_SESSION["error"];
+                        	echo "<span>$error</span>";
+                    	}
+                	?> 
+				</i></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button id="but_upload">Remove</button></td>
 				</tr>
 			</table>
 		</form>
 
 	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script >
 
+$(document).ready(function(){
+
+    $("#but_upload").click(function(event){
+    	event.preventDefault();
+    	var form = $('#myform')[0];
+        var fd = new FormData(form);
+
+        $("#but_upload").prop("disabled", true);
+       	swal({
+			title: "Confirm?",
+			text: "Account will be Deactivated",
+			icon: 'warning',
+			buttons: true,
+			})
+		.then((willDelete) => {
+			if (willDelete) {
+				$.ajax({
+           		   url: './config/remove_acc.php',
+           		   type: 'POST',
+          		   enctype: 'multipart/form-data',
+           		   data:fd,	
+           		   contentType: false,
+           		   processData: false,
+           		   cache: false,
+
+           		 
+           		}),
+           		location.reload()
+			}
+			else{
+				location.reload()
+			}
+		});
+        
+    });
+});
+</script>
 </body>
 </html>

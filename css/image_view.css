@@ -1,5 +1,4 @@
-
-		#myImg {
+    #myImg {
   			border-radius: 5px;
   			cursor: pointer;
   			transition: 0.3s;
@@ -36,15 +35,15 @@
   			animation-duration: 0.5s;
 		}
 
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
+    @-webkit-keyframes zoom {
+      from {-webkit-transform:scale(0)} 
+      to {-webkit-transform:scale(1)}
+    }
 
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
+    @keyframes zoom {
+      from {transform:scale(0)} 
+      to {transform:scale(1)}
+    }
 
 		/* The Close Button */
 		.close {
@@ -63,9 +62,9 @@
   			cursor: pointer;
 		}
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+      .modal-content {
+      width: 100%;
+    }
 }

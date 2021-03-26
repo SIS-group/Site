@@ -96,6 +96,7 @@ session_start();
 			<tr>
 
 				<td>
+
 					<input type="text" name="Username" placeholder="Username" class="logininput">
 				</td>
 			</tr>

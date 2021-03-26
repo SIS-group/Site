@@ -13,63 +13,34 @@
 		input[type=submit]:hover{background-color: green}
     body{font-family: 'Raleway', sans-serif;}
     th{background-color: #4B0082;color: white;border-radius: 10px ;}
-    
-
-    .popup .overlay{
-      position: fixed;
-      top:0px;
-      left: 0px;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.7);
-      z-index: 1;
-      display: none;
-      
-    }
-
-    .popup .content{
-      position: absolute;
-      top:50%;
-      left: 35%;
-      transform: translate(-50%,-50%) scale(0);
-      background: #fff;
-      width: 450px;
-      height: 150px;
-      z-index: 2;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
+    #popup {
+      visibility: hidden;
+      background-color: white;
       border-radius: 10px;
+      position: fixed;
+      width: 35%;
+      height: 35%;
+      left: 40.75%;
+      top: 30%;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     }
 
-    .popup .close-btn{
-     
-      position: absolute;
-      right: 190px;
-      top: 70px;
-
+    #popup .content .msg{
+      text-align: left;
+      margin-left: -55%;
     }
 
-    .popup.active .overlay{
-      display: block;
+    #popup .content .img{
+      margin-top: -15%;
+      margin-left: -85%;
     }
-
-    .popup.active .content{
-      transition: all 300ms ease-in-out;
-      transform: translate(-50%,-50%) scale(1);
-    }
+  
 	</style>
 
-  <script type="text/javascript">
-    function togglePopup(){
-      document.getElementById("popup-1").classList.toggle("active");
-      setTimeout(formsub, 2000);
-    }
-    function formsub(){
-      document.getElementById("myform").submit();
-    }
-    
-  </script>
+
+  
 </head>
 <body>
 	<div class="sidebar">
@@ -81,7 +52,8 @@
   		<a href="./prog_manage.php">Program Managment</a>
       <a href="./course_manage.php">Course Managment</a>
       <a href="./broadcast.php">Broardcast Notifications</a>
-  		<a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 40%;margin-left: 20%" id="logout">Log out</button></a>
+      <a href="./manage_deadlines.php">Manage Deadlines</a>
+  		<a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 20%;margin-left: 20%" id="logout">Log out</button></a>
 	</div>
 
   <ul> 
@@ -96,17 +68,17 @@
   </ul>
 
 
-		<form method="post" action="./config/create_acc.php" id="myform" name="create_account">
-      <div class="content" align="center">
+		
+  <div class="content" align="center">
 
-      <div class="popup" id="popup-1">
-        <div class="overlay"></div>
-        <div class="content">
-          <div class="close-btn" ><img src="../../icons/true.png" style="width: 70px;height: 70px;"></div>
-          <h2>Account Created Successfully</h2>
+      <div id="popup">
+        <div class="content" >
+          <div class="img" ><img src="../../icons/true.png" style="width: 70px;height: 70px;"></div>
+          <h2 class="msg">Account Created Successfully</h2>
         </div>
       </div>
 
+    <form method="post" action="./config/create_acc.php" id="myform" name="create_account">
 			<table align="center">
         <tr>
           <th colspan="2">
@@ -119,30 +91,32 @@
             <select name="role" style="padding: 10px 5px;border-radius: 10px">
               <option value="Director">Director</option>
               <option value="Deputy Director Examination">Deputy Director Examination</option>
-              <option value="Program Coordinator">Program Coordinator</option>
+              <option value="program coordinator">Program Coordinator</option>
               <option value="Examiner">Examiner</option>
               <option value="Assistant Bursar">Assistant Bursar</option>
-              <option value="Assistant Registrar">Assistant Registrar</option>
-              <option value="Interview Commitee Member">Interview Commitee Member</option>
+              <option value="Assistant registrar">Assistant Registrar</option>
+              <option value="Interview committee member">Interview Commitee Member</option>
               <option value="Staff assistant">Staff Assistant</option>
             </select>
   				</td>
   			</tr>
   				<tr>
   					<td>Staff ID</td>
-  					<td><input type="text" name="Staff_id"></td>
+  					<td><input type="text" name="Staff_id" maxlength="8" required></td>
   				</tr>
   				<tr>
   					<td>Name</td>
-  					<td><input type="text" name="Name"></td>
+  					<td><input type="text" name="Name" required></td>
   				</tr>
   				<tr>
   					<td>Email</td>
-  					<td><input type="text" name="Email"></td>
+  					<td><input type="text" name="Email" required></td>
   				</tr>
   				<tr>
             <td colspan="2" style="padding-top: 30px">
-              <center><input type="button" value="submit" onclick="togglePopup()"></center>
+              <center>
+                <button id="but_upload">Submit</button>
+              </center>
 
             </td>
   				</tr>
@@ -151,5 +125,47 @@
     
 	</div>
 
+  
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script >
+
+  $(document).ready(function(){
+
+    $("#but_upload").click(function(event){
+      event.preventDefault();
+      var form = $('#myform')[0];
+      var fd = new FormData(form);
+
+      $("#but_upload").prop("disabled", true);
+      swal({
+        title: "Confirm?",
+        text: "Account will be created",
+        icon: 'warning',
+        buttons: true,
+      })
+    .then((willDelete) => {
+      if (willDelete) {
+        $.ajax({
+                 url: './config/create_acc.php',
+                 type: 'POST',
+                 enctype: 'multipart/form-data',
+                 data:fd, 
+                 contentType: false,
+                 processData: false,
+                 cache: false,
+
+               
+              }),
+              location.reload()
+      }
+      else{
+        location.reload()
+      }
+    });
+        
+    });
+});
+</script>
 </html>

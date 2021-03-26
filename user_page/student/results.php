@@ -26,7 +26,7 @@
   		<a href="./Medical.php">Medical Submission</a>
   		<a href="./course_reg.php">Course Registration</a>
   		<a href="./payment.php">Payment Details</a>
-  		<a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 20%;margin-left: 25%" id="logout">Log out</button></a>
+  		<center><a href="../../login/logout.php" style="all:unset ; "><button style="margin-top: 20%;" id="logout">Log out</button></a></center>
 	  </div>
 
     <?php include("./config/get_name.php") ?>
@@ -53,11 +53,11 @@
   	
     <?php
       include ("./config/get_result.php");
-      if (mysqli_num_rows($result2) > 0) {
+      if ( $result2->num_rows > 0) {
         
         $stat1 = $stat2 = $stat3 = $stat4 = $stat5 = $stat6 = $stat7 = $stat8 = 0;
         // output data of each row
-        while($row2 = mysqli_fetch_assoc($result2)) {
+        while($row2 = $result2->fetch_assoc()) { 
           
           $Year = $row2["Year"];
           $Sem =  $row2["Semester"];
@@ -71,13 +71,13 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>1<sup>st</sup> Year - 1<sup>st</sup> Semester Results</h3>
+                                <h2>1<sup>st</sup> Year - 1<sup>st</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }
               echo "<tr>
                       <td>".$row2["Name"]."</td>
-                      <td><b>".$row2["Result"]."</b></td>
+                      <td style='background-color: #4B0082;border-radius: 10px;color: white'><center>".$row2["Result"]."</center></td>
                     </tr>";
 
             }
@@ -91,13 +91,13 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>1<sup>st</sup> Year - 2<sup>nd</sup> Semester Results</h3>
+                                <h2>1<sup>st</sup> Year - 2<sup>nd</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }
               echo "<tr>
                       <td>".$row2["Name"]."</td>
-                      <td><b>".$row2["Result"]."</b></td>
+                      <td style='background-color: #4B0082;border-radius: 10px;color: white'><center>".$row2["Result"]."</center></td>
                     </tr>";
             }
           }
@@ -111,13 +111,13 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>2<sup>nd</sup> Year - 1<sup>st</sup> Semester Results</h3>
+                                <h2>2<sup>nd</sup> Year - 1<sup>st</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }
               echo "<tr>
                       <td>".$row2["Name"]."</td>
-                      <td><b>".$row2["Result"]."</b></td>
+                      <td style='background-color: #4B0082;border-radius: 10px;color: white'><center>".$row2["Result"]."</center></td>
                     </tr>";
             }
             elseif ($Sem == '2') {
@@ -128,13 +128,13 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>2<sup>nd</sup> Year - 2<sup>nd</sup> Semester Results</h3>
+                                <h2>2<sup>nd</sup> Year - 2<sup>nd</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }
               echo "<tr>
                       <td>".$row2["Name"]."</td>
-                      <td><b>".$row2["Result"]."</b></td>
+                      <td style='background-color: #4B0082;border-radius: 10px;color: white'><center>".$row2["Result"]."</center></td>
                     </tr>";
             }
           }
@@ -147,13 +147,13 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>3<sup>rd</sup> Year - 1<sup>st</sup> Semester Results</h3>
+                                <h2>3<sup>rd</sup> Year - 1<sup>st</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }
               echo "<tr>
                       <td>".$row2["Name"]."</td>
-                      <td><b>".$row2["Result"]."</b></td>
+                      <td style='background-color: #4B0082;border-radius: 10px;color: white'><center>".$row2["Result"]."</center></td>
                     </tr>";
             }
             elseif ($Sem == '2') {
@@ -163,13 +163,13 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>3<sup>rd</sup> Year - 2<sup>nd</sup> Semester Results</h3>
+                                <h2>3<sup>rd</sup> Year - 2<sup>nd</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }
               echo "<tr>
                       <td>".$row2["Name"]."</td>
-                      <td><b>".$row2["Result"]."</b></td>
+                      <td style='background-color: #4B0082;border-radius: 10px;color: white'><center>".$row2["Result"]."</center></td>
                     </tr>";
             }
           }
@@ -182,13 +182,13 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>4<sup>th</sup> Year - 1<sup>st</sup> Semester Results</h3>
+                                <h2>4<sup>th</sup> Year - 1<sup>st</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }
               echo "<tr>
                       <td>".$row2["Name"]."</td>
-                      <td><b>".$row2["Result"]."</b></td>
+                      <td style='background-color: #4B0082;border-radius: 10px;color: white'><center>".$row2["Result"]."</center></td>
                     </tr>";
             }
             elseif ($Sem == '2') {
@@ -198,7 +198,7 @@
                 echo "<table align='center'>
                         <tr>
                             <th colspan=2>
-                                <h3>4<sup>th</sup> Year - 2<sup>nd</sup> Semester Results</h3>
+                                <h2>4<sup>th</sup> Year - 2<sup>nd</sup> Semester Results</h2>
                             </th>
                         </tr>";
               }

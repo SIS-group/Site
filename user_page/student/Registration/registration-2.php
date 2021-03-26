@@ -28,6 +28,6 @@
 		mysqli_query($conn,$sql2);*/
 	}
 
-	header("location: ../../../Student_Reg_form-3.html");
+	header("location: pre_registration.html");
 	$conn->close();
 ?>

@@ -30,13 +30,12 @@
   		<a class="active" href="./Medical.php">Medical Submission</a>
   		<a href="./course_reg.php">Course Registration</a>
   		<a href="./payment.php">Payment Details</a>
-  		<a href="../../login/logout.php" target="_self" style="all:unset ;"><button style="margin-top: 20%;margin-left: 25%" id="logout">Log out</button></a>
+  		<center><a href="../../login/logout.php" target="_self" style="all:unset ;"><button style="margin-top: 20%;" id="logout">Log out</button></a></center>
 
 	</div>
 
 	<?php 
 	include("./config/get_name.php"); 
-	include ('./config/insert_medical.php');
 	?>
 
 	<ul> 
@@ -61,17 +60,22 @@
 	
 
 	<div class="med">
-		<form action="" method="post" enctype="multipart/form-data">
+		<form action=" " method="post" enctype="multipart/form-data" id="myform">
 			<table align="center">
 				<tr><th><h2 align="center">Medical Submission</h2></th></tr>
 				<tr><td><b>Enter Date</b> </td></tr>
-				<tr><td><input type="date" name="Med_date" required></td></tr>
+				<tr><td><input type="date" name="Med_date"  required></td></tr>
+				<tr><td style=";background-color: #DCDCDC;border-radius: 10px">
+					<b>Enter Course Code</b> 
+					<input type="text" name="course" required maxlength="6">
+				</td></tr>
+				
 				<tr><td><b>Upload the file</b></td></tr>
 				<tr><td>
-						<input type="file" id="medfile" name="medfile" style="border:1px dashed black;border-radius:10px;padding: 30px 30px " required>
+						<input type="file" id="file" name="file" style="border:1px dashed black;border-radius:10px;padding: 30px 30px " required>
 					</td>
 				</tr>
-				<tr><td><input type="submit" name="medsubmit" value="Submit"></td></tr>
+				<tr><td><button id="but_upload">Submit</button></td></tr>
 			</table>
 
 			
@@ -79,6 +83,45 @@
 		</form>
 	</div>
 	</div>
-	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+    $("#but_upload").click(function(event){
+    	event.preventDefault();
+    	var form = $('#myform')[0];
+        var fd = new FormData(form);
+        
+        $("#but_upload").prop("disabled", true);
+       	swal({
+			title: "Confirm?",
+			text: "You will be registered for this course",
+			icon: 'warning',
+			buttons: true,
+			})
+		.then((willDelete) => {
+			if (willDelete) {
+				$.ajax({
+           		   url: './config/insert_medical.php',
+           		   type: 'POST',
+          		   enctype: 'multipart/form-data',
+           		   data: fd,
+           		   contentType: false,
+           		   processData: false,
+           		   cache: false,
+
+           		 
+           		}),
+           		location.reload()
+			}
+			else{
+				location.reload()
+			}
+		});
+        
+    });
+});
+</script>	
 </body>
 </html>

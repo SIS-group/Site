@@ -15,7 +15,7 @@
 		
 		input[type="submit"]:hover{background-color: green}
 		body{font-family: 'Raleway', sans-serif;}
-		th{background-color: #002b80;color: white;border-radius: 10px ;margin-bottom: 50px}
+		th{background-color: #4B0082;color: white;border-radius: 10px ;margin-bottom: 50px}
 	</style>
 	<script type="text/javascript">
 	function check_PassMatch() {
@@ -36,9 +36,8 @@
 			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
 		</center>
 		<a href="../staff_assistant.php">Print Documents</a>
-		<a href="./enter_index.php">Registration & Index numbers </a>
   		<a class="active" href="./enter_index.php ">Account setting</a>
-  		<a href="../../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
+  		<center><a href="../../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%">Log out</button></a></center>
 
 	</div>
 

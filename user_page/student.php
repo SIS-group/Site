@@ -74,7 +74,7 @@
   		<a href="./student/Medical.php">Medical Submission</a>
   		<a href="./student/course_reg.php">Course Registration</a>
   		<a href="./student/payment.php">Payment Details</a>
-  		<a href="../login/logout.php" style="all:unset ; "><button style="margin-top: 20%;margin-left: 25%" id="logout">Log out</button></a>
+  		<center><a href="../login/logout.php" style="all:unset ; "><button style="margin-top: 20%;" id="logout">Log out</button></a></center>
 	  </div>
 
     <?php
@@ -101,6 +101,7 @@
     </ul>
 
 	<div class="content">
+
     <center><font size="5px">Welcome to Student Information System of Cyber Campus, University of Colombo</font></center><br>
     <div id="sem_prog">
       <h3 align="center">Semester progress</h3>

@@ -15,7 +15,7 @@
 		#reject:hover{background-color: red}
 		input[type=submit]{margin-left: 30px}
 		body{font-family: 'Raleway', sans-serif;}
-		h2{background-color: #002b80;color: white;padding: 20px 20px;margin: 1% 14%;border-radius: 10px}
+		h2{background-color: #4B0082;color: white;padding: 20px 20px;margin: 1% 14%;border-radius: 10px}
 		#print{
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			margin: 50px 300px;
@@ -33,9 +33,8 @@
 			<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
 		</center>
 		<a class="active" href="./ .php">Print Documents</a>
-		<a href="./Staff_assistant/enter_index.php">Registration & Index numbers </a>
   		<a href="./Staff_assistant/account_setting.php">Account setting</a>
-  		<a href="../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;margin-left: 25%">Log out</button></a>
+  		<center><a href="../login/logout.php" target="_self" style="all:unset ;"><button id="logout" style="margin-top: 80%;">Log out</button></a></center>
 
 	</div>
 
@@ -61,18 +60,26 @@
 
 		<div id="print"><center>
 			<h2>Print Documents</h2>
+
+			<table>
 			Select document type<br><br>
-			<select name="doc_type" style="padding: 10px 10px;border-radius: 25px">
-				<option>Program list</option>
-				<option>Course list</option>
-				<option>Student list</option>
-			</select><br><br>
-			<button onclick="window.print()">Print this page</button>
+				<select name="doc_type" style="padding: 10px 10px;border-radius: 25px">
+					<option>Program list</option>
+					<option>Course list</option>
+					<option>Student list</option>
+				</select><br><br>
+			<button onclick="printfun()">Print this page</button>
+			</table>
 		</center></div>
 		
 		
 	</div>
-
+<script type="text/javascript">
+	function printfun() {
+		alert("awa");
+		$("#print").printElement();
+	}
+</script>
 </body>
 </html>
 
