@@ -21,6 +21,7 @@
 		td{ padding: 10px 10px }
         th{background-color: #4B0082;color: white;border-radius: 10px ;}
 		input[type=submit]:hover{background-color: green; border-radius: 5px}
+        /* input[type=text]{padding: 10px 10px} */
         body{font-family: 'Raleway', sans-serif;margin: 0;}
 		.sidebar a 
         {
@@ -31,6 +32,17 @@
             border: 1px solid black;
             border-radius: 10px;
             padding: 7px 20px;
+        }
+        .alert
+        {
+            background-color: #4B0082;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+            width: 50%;
+            font-size: 120%;
+            margin-bottom: 20px;
         }
 	    </style>
     </head>
@@ -65,8 +77,27 @@
     </ul>
 
     <div class="content" align="center">
+        <?php 
+            if( isset($_SESSION["success"]))
+            {
+                echo '<div class="alert">' . $_SESSION["success"] . '</div>';
+                unset($_SESSION["success"]);
+            }
+
+            // if( isset($_SESSION["Notreg"]))
+            // {
+            //     echo '<div class="alert">' . $_SESSION["Notreg"] . '</div>';
+            //     unset($_SESSION["Notreg"]);
+            // }
+
+            if( isset($_SESSION["active"]))
+            {
+                echo '<div class="alert">' . $_SESSION["active"] . '</div>';
+                unset($_SESSION["active"]);
+            }
+        ?>
     <!-- <p style="font-size: 160%;" >Search by the student's: </p> -->
-            <form name="studentpersonaldata" method="POST" action="interview_committee_member/reg.php">
+            <form name="studentpersonaldata" method="POST" action="interview_committee_member/config/stureg.php">
                 <table>
                     <tr>
                         <th colspan="2">
@@ -74,8 +105,11 @@
                         </th>
                     </tr>
                     <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <td style="padding:10px">
-                            <label for="program">Program
+                            <label for="program">Program   
                         
                             <select name="program" style="border-radius:5px">
                                 <option value="1020">BSc (External) in Electronics and Automation Technologies</option>
@@ -88,20 +122,22 @@
                             <input type="radio"  name="searchby" value="NIC">
                             <label for="indexno">NIC</label><br>
                         </td>
+                    </tr>-->
+                    <tr>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            NIC No   
+                            <input type="text" name="searchtext" placeholder="enter nic" required>
+                        </td>
                     </tr>
                     <tr>
-                        <td>
-                            <input type="radio" name="searchby" value="Name">
-                            <label for="regno">Name</label><br>
-                        </td>
-                    </tr> -->
-
+                        <td></td>
+                    </tr>
                     <tr>
-                        <td>
-                            NIC
-                            <input type="text" name="searchtext" placeholder="enter nic">
-                        </td>
-
+                        <td></td>
                         <td>
                             <input type="submit" name="search" value="search">   
                         </td>

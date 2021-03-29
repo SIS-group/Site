@@ -99,7 +99,7 @@
 
                     <tr>
                         <td>
-                            <input type="text" name="searchtext" placeholder="enter text">
+                            <input type="text" name="searchtext" placeholder="enter text" required>
                             <input type="submit" name="search" value="search">   
                         </td>
                     </tr>

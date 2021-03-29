@@ -39,7 +39,12 @@
             exit();
         }
 
-        if ($result1->num_rows > 0) 
+        if ($result1->num_rows == 0)
+        {
+            header('location: ./../studentpersonaldetails.php');
+        }
+
+        if ($result1->num_rows == 1) 
         {
             //$row1 = mysqli_fetch_assoc($result1);
                 

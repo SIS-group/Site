@@ -14,11 +14,19 @@
         <style type="text/css">
         table{ border-radius: 10px ;background-color: white; padding: 4% 4%;}
 		td{ padding: 10px 10px }
-        th{background-color: #4B0082;color: white;border-radius: 10px ;}
+        th,p{background-color: #4B0082;color: white;border-radius: 10px ; padding: 10px 10px}
 		input[type=submit]:hover{background-color: green; border-radius: 5px}
 		.sidebar a 
         {
   			padding: 25%;
+        }
+        .alert
+        {
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
         }
         body{font-family: 'Raleway', sans-serif;margin: 0;}
 	    </style>
@@ -56,10 +64,45 @@
         </ul>
 
         <div class="content" align="center">
-        <form name="account settings" method="POST" action=" ">
+        <?php 
+            //session_start();
+            if (isset($_SESSION["success"])) 
+            {
+
+                echo '<div class="alert">' . $_SESSION["success"] . '</div>';
+                unset($_SESSION["success"]);
+            }
+        ?>
+        
+        <form name="account settings" method="POST" action=" ./config/email.php">
             <table>
                 <!-- <p style="font-size:160%; ">Change Password</p> -->
-                
+                <tr>
+                    <th colspan="3">
+                        <p style="font-size:160%">Send Email</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td><input type="date" name="date" required></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td><input type="time" name="time" required></td>
+                </tr>
+                <tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                    <td align="right"><input type="submit" name="submit"></td>
+                    <td></td>
+                </tr>
             </table>
         </form>
         </div>

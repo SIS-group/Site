@@ -1,38 +1,50 @@
 <?php
     session_start();
 
-    $conn = mysqli_connect("localhost","root","","sis");
+    $conn = new mysqli("localhost","root","","sis");
 
-    if ( isset($_POST['savepass']) && !empty($_POST['current_password']) && !empty($_POST['new_password']) && !empty($_POST['confirm_password']))
+    if ( isset($_POST['savepass']))
     {
         $current_password = $_POST['current_password'];
         $new_password = $_POST['new_password'];
-        $confirm_password = $_POST['confirm_password'];
+        //$confirm_password = $_POST['confirm_password'];
         $active_user = $_SESSION['login_user'];
 
-        $sql1 = " SELECT Password FROM staff WHERE Staff_ID='$active_user' ";
-        $sql2 = " UPDATE staff SET password='$new_password' WHERE Staff_ID='$active_user'";
+        $hashed_new_pass = password_hash($new_password,PASSWORD_DEFAULT);
 
-        $result1 = mysqli_query($conn,$sql1);
-        $row1 = mysqli_fetch_assoc($result1);
+        $sql1 = " SELECT Password FROM staff WHERE Staff_ID = ? ";
+        $stmt1 = $conn->prepare($sql1);
+        $stmt1->bind_param("s",$active_user);
+        $stmt1->execute();
+        $result1 = $stmt1->get_result();
+        $row1 = $result1->fetch_assoc();
+        $tab_password = $row1["Password"];
+        $stmt1->close();
 
-        if ( ($row1['Password'] == $current_password) &&  ($new_password==$confirm_password) )
+        //password_verify($current_password,$tab_password);
+
+        if (password_verify($current_password,$tab_password))
         {
-            $result2 = mysqli_query($conn,$sql2);
-            echo "password have been successfully updated.";
-        }
+            $sql2 = " UPDATE staff SET password = ? WHERE Staff_ID = ? ";
+            $stmt2 = $conn->prepare($sql2);
+            $stmt2->bind_param("ss",$hashed_new_pass,$active_user);
+            $stmt2->execute();
+            $stmt2->close();
 
-        else if (($row1['Password'] == $current_password) &&  ($new_password!=$confirm_password))
+            if ($stmt2)
+            {
+                $_SESSION["success"] = "Password has been updated successfully";
+                header("location: ../account_settings.php");
+                exit();
+            }
+        }
+        else
         {
-            echo "Please enter the new password correctly";
+            $_SESSION["success"] = "There was an error";
+            header("location: ../account_settings.php");
+            exit();
         }
-
-        else if ( $row1['Password'] != $current_password )
-        {
-            echo "Invalid password";
-        }
-
     }
 
-    mysqli_close($conn);
+    $conn->close();
 ?>

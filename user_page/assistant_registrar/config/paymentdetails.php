@@ -24,7 +24,12 @@
         
         if ( $result2->num_rows > 0 )
         {
-            include("../displaypayments.php");   
+            include("../displaypayments.php"); 
+            //header('location: ../displaypayments.php');  
+        }
+        else
+        {
+            header('location: ./../studentpaymentdetails.php');
         }
 
     }
