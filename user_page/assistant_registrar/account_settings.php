@@ -93,7 +93,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td align="right"><input type="submit" name="submit" value="uploadphoto"></td>    
+                    <td align="right"><input type="submit" name="savephoto" value="uploadphoto"></td>    
                 </tr>
                 </tr>
                 </form>
