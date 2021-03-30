@@ -25,7 +25,7 @@
 }
  
 .sidebar a.active {
-  background-color: #002b80;
+  background-color: #4B0082;
   color: white;
 }
 
@@ -58,7 +58,7 @@ div.content {
   
 }
 
-button{background-color:#002b80 ;color: white;border: none;padding: 11px 40px;text-align: center; border-radius: 25px;}
+button{background-color:#4B0082 ;color: white;border: none;padding: 11px 40px;text-align: center; border-radius: 25px;}
 #logout:hover{background-color: red;}
 img{margin-bottom: 5px}
 #sys{font-size: 12px;color: #06927c;margin-bottom: 20px}

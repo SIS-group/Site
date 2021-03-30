@@ -1,180 +1,369 @@
+<?php
+	session_start();
+	include("../Login/dbcon.php");
+?>
 <!DOCTYPE html>
 <html>
+  <head>
 <title>Deputy Director</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
-
-<!-- Top container -->
-<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-left">Department of Examination</span>
-</div>
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container w3-row">
-    <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong>Deputy Director</strong></span><br>
-    </div>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Dashboard</h5>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-dashboard fa-fw"></i>  Paper Marking Progress</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope"></i>  Notification</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users"></i>  Student Results & Grades</a>
-    <a href="DD1.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye"></i>  Verify Result Sheet</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user"></i>  Log Out</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog"></i>  Account Settings</a><br><br>
-  </div>
-</nav>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/sidepanel.css">
+  <link rel="stylesheet" type="text/css" href="../css/css.css">
+  <link rel="stylesheet" type="text/css" href="../css/top_navigation.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <style type="text/css">
+    table{background-color: white; padding: 10px 10px; border-radius: 10px ;margin-bottom: 5%;width: 50%}
+    th, td {padding: 15px;border-bottom: 1px solid #ddd;}
+    th{background-color: #002b80;border-radius: 10px;color: white}
+    tr:hover {background-color: #f2f2f2;}
+    body{font-family: 'Raleway', sans-serif;}
+    #sem_prog{
+      background-color: white;
+      width: 70%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 10px;
+      padding: 20px 20px;
+      margin-left: 13%;
+    }
 
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
-  <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> Paper Marking Progress</b></h5>
-  </header>
-
-  <div class="w3-row-padding w3-margin-bottom">
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-check-square-o w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>100</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Checked Papers</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-blue w3-padding-16">
-        <div class="w3-left"><i class="fa fa-spinner w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>140</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Checking Papers</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-teal w3-padding-16">
-        <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>240</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Candidates</h4>
-      </div>
-    </div>
-    <div class="w3-quarter">
-      <div class="w3-container w3-orange w3-text-white w3-padding-16">
-        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>6</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Answer Inspectors</h4>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-  <div class="w3-container">
-    <h5>Paper Marking Status</h5>
-    <p>Java</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">25%</div>
-    </div>
-
-    <p>C++</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
-    </div>
-
-    <p>Web</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
-    </div>
-  </div>
-  <hr>
-
-  <div class="w3-container">
-    <h5>Marking Prorgress of Inspectors</h5>
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-      <tr>
-        <td>Inspector 01</td>
-        <td>65%</td>
-      </tr>
-      <tr>
-        <td>Inspector 02</td>
-        <td>15.7%</td>
-      </tr>
-      <tr>
-        <td>Inspector 03</td>
-        <td>5.6%</td>
-      </tr>
-      <tr>
-        <td>Inspector 04</td>
-        <td>2.1%</td>
-      </tr>
-      <tr>
-        <td>Inspector 05</td>
-        <td>1.9%</td>
-      </tr>
-      <tr>
-        <td>Inspector 06</td>
-        <td>1.5%</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-light-grey">
-  </footer>
-
-  <!-- End page content -->
-</div>
-
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-    overlayBg.style.display = "none";
-  } else {
-    mySidebar.style.display = 'block';
-    overlayBg.style.display = "block";
-  }
+#progress {
+    background: #333;
+    border-radius: 13px;
+    height: 20px;
+    width: 90%;
+    padding: 3px;
+    margin: 20px 50px;
 }
 
-// Close the sidebar with the close button
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
+#progress:after {
+    content: '';
+    display: block;
+    background: orange;
+    width: <?php echo "30";?>%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.grid-container > div {
+  background-color: white;
+  text-align: left;
+  padding: 0px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item2 {
+  grid-column: 1 / 2;
+  grid-row: 1/3;
+}
+  </style>
+  </head>
+  <body>
+    <div class="sidebar">
+    	<center><img src="../icons/logo.png" style="width:80px;height:80px;" >
+		<div id="sys">Student Information System of Cyber Campus, University of Colombo</div>
+          
+      </center>
+      <a  href="deputydirector/pmarking.php">Paper Marking Progress</a>
+    	<a href="#">Student Results & Grades</a>
+  		<a href="deputydirector/verify.php">Verify Result Sheet</a>
+  		<a href="deputydirector/account_setting.php">Account Settings</a>
+  		<a href="../login/logout.php" style="all:unset ; "><button style="margin-top: 20%;margin-left: 25%" id="logout">Log out</button></a>
+    </div>
+    
+    <ul>
+      <li style="margin-right: 258px" class="dropdown">
+      <img src="../icons/default.png"<?php //echo $Userpic ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+      <div class="dropdown-content">
+            <a href="./deputydirector/account_Setting.php">Setting</a>
+            <a href="../login/logout.php">Log out</a>
+        </div>
+      </li>
+	  <li style="margin: 25px 20px">Welcome , Deputydirector</li>
+      <li style="margin: 25px 20px"><?php //echo $UserName; ?></li>
+      <li > 
+        <img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top: 15px">
+		<div class="dropdown-content1">
+            	<p>notifications are shown here</p>
+        	</div>
+      </li>
+    </ul>
+    <div class="content" align="center">
+		<form method="post" action="./deputydirector/resultandgrades.php">
+			<table style="width:95%">
+				<tr>
+					<th colspan="2">
+						<p style="font-size:160%">Results and Grades of Students</p>
+					</th>
+				</tr>
+				<tr style="width:90%">
+					<td style="width:90%" align="center">
+						<label for="program" style="font-size: 120%">Program
+					</td>
+					<td>
+						<select name="program" style="font-size: 120%">
+							<option value="1020">BSc (External) in Electronics and Automation Technologies</option>
+							<option value="1021">BSc (External) in Financial Engineering</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:90%" align="center">
+						<label for="year" style="font-size: 110%">Year
+					</td>
+					<td>
+						<select name="year" style="font-size: 110%">
+							<option value="year1">First Year</option>
+							<option value="year2">Second Year</option>
+							<option value="year3">Third Year</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:90%" align="center">
+						<label for="course">Course
+					</td>
+					<td>
+						<select name="course" style="font-size: 110%">
+							<option value="EA1001">Waves, Vibrations & AC Theory</option>
+							<option value="EA1002">Analogue & Digital Electronics - I</option>
+							<option value="EA1003">Electromagnetic Theory</option>
+							<option value="EA1004">Introduction to Computer Programming</option>
+							<option value="EA1005">Computer Applications</option>
+							<option value="EA1006">Computer Architecture - I</option>
+							<option value="EA1007">Electronic Circuit Simulations</option>
+							<option value="EA1008">Object Oriented Programming</option>
+							<option value="EA1009">Calculus</option>
+							<option value="EA1010">Mathematical Methods – I</option>
+							<option value="EA1011">Differential Equations</option>
+							<option value="EA1012">Probability and Statistics</option>
+							<option value="EA1013">English for Science and Technology</option>
+							<option value="EA1030">Analogue Electronic Laboratory</option>
+							<option value="EA1031">Digital Electronic Laboratory</option>
+							<option value="EA2001">Analogue & Digital Electronics - II</option>
+							<option value="EA2002">Analogue & Digital ICs</option>
+							<option value="EA2003">Sensors & Transducers and DAQ Systems</option>
+							<option value="EA2004">Computer Architecture – II</option>
+							<option value="EA2005">Applied Numerical Methods</option>
+							<option value="EA2006">Internet Programming</option>
+							<option value="EA2007">Data Communication Techniques</option>
+							<option value="EA2008">Rapid Applications Development</option>
+							<option value="EA2009">Computational Statistics</option>
+							<option value="EA2010">Mathematical Methods – II</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right">
+						<input type="submit" style="border-radius: 5px" name="search" value="Search">
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div class="container">
+			<p style="font-size:150%;">Recently Released Results - Two Weeks</p>
+		</div>
+		<div class="grid-container">
+			<div>
+				<p>Waves, Vibrations & AC Theory</p>
+				<!--<img src="./deputydirector/img/wavesvibes.jpg" style="width:70%; height:70%;">-->
+				<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Grades', 'Numbers'],
+  <?php
+
+	// Database credentials
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'sis2';
+
+// Create connection and select db
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+// Get data from database
+$result = $db->query("SELECT Result, count(*) as number FROM student_result WHERE CourseID = 'EA1001' GROUP BY Result");
+
+      if($result->num_rows > 0){
+          while($row = $result->fetch_assoc()){
+            echo "['".$row['Result']."', ".$row['number']."],";
+          }
+      }
+      ?>
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
 }
 </script>
+			</div>
+			<div>
+				<p>Computer Applications</p>
+				<div id="piechart1"></div>
 
-</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Grades', 'Numbers'],
+  <?php
+
+	// Database credentials
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'sis2';
+
+// Create connection and select db
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+// Get data from database
+$result = $db->query("SELECT Result, count(*) as number FROM student_result WHERE CourseID = 'EA1005' GROUP BY Result");
+
+      if($result->num_rows > 0){
+          while($row = $result->fetch_assoc()){
+            echo "['".$row['Result']."', ".$row['number']."],";
+          }
+      }
+      ?>
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+  chart.draw(data, options);
+}
+</script>
+			</div>
+		</div>
+		<div class="grid-container">
+			<div>
+				<p>Analogue & Digital Electronics - I</p>
+				<div id="piechart2"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Grades', 'Numbers'],
+  <?php
+
+	// Database credentials
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'sis2';
+
+// Create connection and select db
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+// Get data from database
+$result = $db->query("SELECT Result, count(*) as number FROM student_result WHERE CourseID = 'EA1002' GROUP BY Result");
+
+      if($result->num_rows > 0){
+          while($row = $result->fetch_assoc()){
+            echo "['".$row['Result']."', ".$row['number']."],";
+          }
+      }
+      ?>
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+  chart.draw(data, options);
+}
+</script>
+			</div>
+			<div>
+				<p>Electromagnetic Theory</p>
+				<div id="piechart3"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Grades', 'Numbers'],
+  <?php
+
+	// Database credentials
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'sis2';
+
+// Create connection and select db
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+// Get data from database
+$result = $db->query("SELECT Result, count(*) as number FROM student_result WHERE CourseID = 'EA1003' GROUP BY Result");
+
+      if($result->num_rows > 0){
+          while($row = $result->fetch_assoc()){
+            echo "['".$row['Result']."', ".$row['number']."],";
+          }
+      }
+      ?>
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+  chart.draw(data, options);
+}
+</script>
+			</div>
+		</div>
+	</div>
+
+    <h2><a href = "../login/logout.php">Sign Out</a></h2>
+
+  </body>
 </html>
