@@ -45,6 +45,7 @@
                         float: left;
                     }
                 </style>
+                
             </head>
 
             <body>
@@ -89,8 +90,17 @@
                             <th>Result</th>
                         </tr>
             <?php
-            while ( $row1 = mysqli_fetch_assoc($result1) )
+            while ( $row1 = $result1->fetch_assoc() )
             {
+                if ( $row1["Result"]=="A+" || $row1["Result"]=="A" || $row1["Result"]=="A-" || $row1["Result"]=="B+" || $row1["Result"]=="B" || $row1["Result"]=="B-" || $row1["Result"]=="C+")
+                {
+                    $countPass++;
+                }
+                else if ($row1["Result"]=="C" || $row1["Result"]=="C-" || $row1["Result"]=="D+" || $row1["Result"]=="D" || $row1["Result"]=="D-" || $row1["Result"]=="E")
+                {
+                    $countRepeat++;
+                }
+                $data = array($countPass,$countRepeat);
             ?>
                 <tr>
                     <td><?php echo $row1["IndexNo"] ?></td>
@@ -99,6 +109,13 @@
             <?php        
             }
             ?>
+                <script>
+                    var myDoughnutChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: <?php $data ?>,
+                        options: options
+                    });
+                </script>
             </div><!-- content -->
     </body>
 </html>

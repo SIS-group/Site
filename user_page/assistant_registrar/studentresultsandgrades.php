@@ -93,9 +93,18 @@
                             <label for="program">Program
                         </td>
                         <td>
-                            <select name="program">
+                            <!-- <select name="program">
                                 <option value="1020">BSc (External) in Electronics and Automation Technologies</option>
                                 <option value="1021">BSc (External) in Financial Engineering</option>
+                            </select> -->
+                            <select name="program">
+                            <?php 
+                                include("./config/sturesults.php");
+                                while($data1 = $result1->fetch_array())
+                                {
+                                    echo "<option value='".$data1['ProgramID']."'>".$data1['Program_Name']."</option>";
+                                }
+                            ?>
                             </select>
                         </td>
                     </tr>
@@ -108,7 +117,7 @@
                                 <option value="year1">First Year</option>
                                 <option value="year2">Second Year</option>
                                 <option value="year3">Third Year</option>
-                                <option value="year4">Fourth Year</option>
+                                <!-- <option value="year4">Fourth Year</option> -->
                             </select>
                         </td>
                     </tr>
@@ -118,7 +127,7 @@
                         </td>
                         <td>
                             <select name="course">
-                                <option value="EA1001">Waves, Vibrations & AC Theory</option>
+                                <!-- <option value="EA1001">Waves, Vibrations & AC Theory</option>
                                 <option value="EA1002">Analogue & Digital Electronics - I</option>
                                 <option value="EA1003">Electromagnetic Theory</option>
                                 <option value="EA1004">Introduction to Computer Programming</option>
@@ -143,7 +152,14 @@
                                 <option value="EA2008">Rapid Applications Development</option>
                                 <option value="EA2009">Computational Statistics</option>
                                 <option value="EA2010">Mathematical Methods – II</option>
-                            </select>
+                            </select> -->
+
+                            <?php
+                                while($data2 = $result2->fetch_array())
+                                {
+                                    echo "<option value='".$data2['CourseID']."'>".$data2['Name']."</option>";
+                                }
+                            ?>
                         </td>
                     </tr>
                     <tr>

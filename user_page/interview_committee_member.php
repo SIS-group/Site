@@ -1,8 +1,9 @@
 <?php
-
     session_start();
     
-    include("../Login/dbcon.php");
+    //include("../config/dbcon.php");
+    include("./interview_committee_member/config/getprofilepic.php");
+    //echo $user;
 ?>
 
 <!DOCTYPE html>
@@ -60,13 +61,13 @@
 	</div>
     <ul>
      	<li style="margin-right: 270px" class="dropdown">
-			<img src="./Assistant_bursar/Profile_photo/default.png" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+			<img src="./interview_committee_member/profile_photo/<?php echo $profile_picture ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
 			<div class="dropdown-content">
       			<a href="./interview_committee_member/account_settings.php">Setting</a>
       			<a href="../login/logout.php">Log out</a>
     		</div>
 		</li>
-     	<li style="margin: 25px 20px"><?php echo "Interview Committee Member" ?></li>
+     	<li style="margin: 25px 20px"><?php echo $username ?></li>
     	
     	<li class="dropdown"> 
         	<img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">

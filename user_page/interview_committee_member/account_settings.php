@@ -1,6 +1,7 @@
 <?php
     session_start();
-    $user = $_SESSION["login_user"];
+    //$user = $_SESSION["login_user"];
+    include("./config/getprofilepic.php");
 ?>
 
 <!DOCTYPE html>
@@ -62,13 +63,13 @@
 
         <ul>
             <li style="margin-right: 270px" class="dropdown">
-                <img src="../Assistant_bursar/Profile_photo/default.png" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+                <img src="profile_photo/<?php echo $profile_picture ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
                 <div class="dropdown-content">
                     <a href="account_settings.php">Setting</a>
                     <a href="../../login/logout.php">Log out</a>
                 </div>
             </li>
-            <li style="margin: 25px 20px"><?php echo "Interview Committee Member" ?></li>
+            <li style="margin: 25px 20px"><?php echo $username ?></li>
             
             <li class="dropdown"> 
                 <img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">

@@ -1,5 +1,7 @@
 <?php
     session_start();
+
+    include("./config/getprofilepic.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,13 +77,13 @@
 
         <ul>
             <li style="margin-right: 270px" class="dropdown">
-                <img src="../Assistant_bursar/Profile_photo/default.png" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+                <img src="profile_photo/<?php echo $profile_picture ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
                 <div class="dropdown-content">
                     <a href="account_settings.php">Setting</a>
                     <a href="../../Login/logout.php">Log out</a>
                 </div>
             </li>
-            <li style="margin: 25px 20px"><?php echo "Assistant Registrar" ?></li>
+            <li style="margin: 25px 20px"><?php echo $username ?></li>
             
             <li class="dropdown"> 
                 <img src="../../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">
@@ -104,8 +106,13 @@
                         </td>
                         <td>
                             <select name="program">
-                                <option value="1020">BSc (External) in Electronics and Automation Technologies</option>
-                                <option value="1021">BSc (External) in Financial Engineering</option>
+                            <?php 
+                                include("./config/sturesults.php");
+                                while($data1 = $result1->fetch_array())
+                                {
+                                    echo "<option value='".$data1['ProgramID']."'>".$data1['Program_Name']."</option>";
+                                }
+                            ?>
                             </select>
                         </td>
                     </tr>
@@ -118,7 +125,7 @@
                                 <option value="year1">First Year</option>
                                 <option value="year2">Second Year</option>
                                 <option value="year3">Third Year</option>
-                                <option value="year4">Fourth Year</option>
+                                <!-- <option value="year4">Fourth Year</option> -->
                             </select>
                         </td>
                     </tr>

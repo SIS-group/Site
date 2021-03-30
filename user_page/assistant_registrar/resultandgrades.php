@@ -4,6 +4,7 @@
     if ( isset($_POST['search']))
     {
         $course = $_POST['course'];
+        $program = $_POST['program'];
 
         $sql1 = " SELECT * FROM student_result WHERE CourseID = ? ";
         //$result1 = mysqli_query($conn,$sql1);
@@ -19,11 +20,18 @@
         $result2 = $stmt2->get_result();
         $row2 = $result2->fetch_assoc();
 
+        $countAplus = $countA = $countAminus = 0;
+        $countBplus = $countB = $countBminus = 0;
+        $countCplus = $countC = $countCminus = 0;
+        $countDplus = $countD = $countDminus = 0;
+        $countPass = $countRepeat = 0;
+
         //$result2 = mysqli_query($conn,$sql2);
         //$row2 = mysqli_fetch_assoc($result2);
 
         if ($result1->num_rows > 0 )
         {
+
             include('./displayresultsandgrades.php'); 
             
             /*$data = array();
