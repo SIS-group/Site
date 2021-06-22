@@ -1,7 +1,6 @@
 <?php
 	session_start();
-	//include("../Login/dbcon.php");
-	include("./assistant_registrar/config/getprofilepic.php");
+	include("../Login/dbcon.php");
 ?>
 
 <!DOCTYPE html>
@@ -88,13 +87,13 @@
 	</div>
 	<ul>
 		<li style="margin-right: 270px" class="dropdown">
-			<img src="./assistant_registrar/profile_photo/<?php echo $profile_picture ?>" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
+			<img src="./Assistant_bursar/Profile_photo/default.png" style="width: 60px;height: 60px;border-radius: 50%;" class="dropbtn">
 			<div class="dropdown-content">
 				<a href="./assistant_registrar/account_settings.php">Setting</a>
 				<a href="../login/logout.php">Log out</a>
 			</div>
 		</li>
-		<li style="margin: 25px 20px"><?php echo $username ?></li>
+		<li style="margin: 25px 20px"><?php echo "Assistant Registrar" ?></li>
 		
 		<li class="dropdown"> 
 			<img src="../icons/bell.png" style="width: 40px;height: 40px;border-radius: 50%;background-color: white;margin-top:15px" class="dropbtn">

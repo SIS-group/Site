@@ -93,7 +93,7 @@
                 </tr>
                 <tr>
                     <td>Time</td>
-                    <td><input type="time" name="time" required></td>
+                    <td><input type="time" name="time" min="08:00" max="12:00" required></td>
                 </tr>
                 <tr>
                 <tr>

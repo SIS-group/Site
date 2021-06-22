@@ -57,8 +57,6 @@
         $date = $_POST["date"];
         $time = $_POST["time"];
 
-        
-
         $sql1 = "SELECT Email,Name FROM student WHERE RegNo IS NOT NULL AND Account_status='Pending'";
         $stmt1 = $conn->prepare($sql1);
         $stmt1->execute();
@@ -69,7 +67,7 @@
             //echo $row1['Email'];
             $to = $row1['Email'];
             $subject = "Registering for cyber campus degree programme";
-            $txt = "Dear student,\nThis is to inform you that you have successfully registered to the Degree Programme of Cyber Campus of University of Colombo. The interview will be held on ".$date.'at'.$time." am in the University of Colombo premises. Be there on time and bring the necessary documents (O/L certificate, A/L certificate).\nBest Regards";
+            $txt = "Dear student,\nThis is to inform you that you have successfully registered to the Degree Programme of Cyber Campus of University of Colombo. The interview will be held on ".$date." at ".$time." am in the University of Colombo premises. Be there on time and bring the necessary documents (O/L certificate, A/L certificate).\nBest Regards";
             
             sendmail($to,$subject,$txt);
         }
