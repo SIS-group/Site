@@ -57,7 +57,7 @@
         <a href=" interview_committee_member/callforinterviews.php">Call for interviews</a>
   		<!-- <a href="interview_committee_member/notifications.php">Notifications</a> -->
   		<a href=" interview_committee_member/account_settings.php">Account settings</a>
-  		<a href="../login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
+  		<a href="../login/logout.php" style="all:unset ;padding: 25%; "><button style="margin-top: 20px;">Log out</button></a>
 	</div>
     <ul>
      	<li style="margin-right: 270px" class="dropdown">

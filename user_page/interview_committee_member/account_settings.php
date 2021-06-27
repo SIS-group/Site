@@ -58,7 +58,7 @@
   		    <!-- <a href="notifications.php">Notifications</a> -->
             <a href=" callforinterviews.php">Call for interviews</a>
             <a class="active" href=" account_settings.php">Account settings</a>
-            <a href="../../Login/logout.php" style="all:unset ;padding: 25%; "><button>Log out</button></a>
+            <a href="../../Login/logout.php" style="all:unset ;padding: 25%; "><button style="margin-top: 20px;">Log out</button></a>
         </div>
 
         <ul>
